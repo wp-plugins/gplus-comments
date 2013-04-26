@@ -18,23 +18,23 @@ if ( !defined('ABSPATH')) exit;
 
 if (post_password_required()) { ?>
     <p class="nocomments"><?php _e('This post is password protected. Enter the password to view any comments.', 'responsive'); ?></p>    
-	<?php return; } ?>
+<?php return; } ?>
 
 <div id="comment-tabs">
-  <ul>
-    <li><a href="#gplus-tab"><i class="icon-googleplus"></i> Comments</a></li>
+  <ul class="controls inline clearfix">
+    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i> Comments</a></li>
     <li><a href="#wp-tab"><i class="icon-wordpress"></i> Comments</a></li>
     <li><a href="#tb-tab"><i class="icon-share-alt"></i>Trackbacks</a></li>
   </ul>
-  <div id="gplus-tab">
+  <div id="gplus-tab" class="block active">
     <g:comments href="<?php echo the_permalink(); ?>" width="598" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD"></g:comments>
   </div> <!--//gplus-tab -->
-  <div id="wp-tab">
+  <div id="wp-tab" class="block clearfix">
 
 <?php if (have_comments()) : ?>
     <h6 id="comments">
 			<?php
-				printf( _n('One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'responsive'),
+				printf( _n('One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number()),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>');
 			?>
     </h6>
@@ -51,7 +51,7 @@ if (post_password_required()) { ?>
     </ol>
 
 <?php else : ?>
-  <p class="nocomments">There hasent been any comments made with wordpress so far on this post.</p>
+  <p class="nocomments">No Comments.</p>
 <?php endif; ?>
 
 <?php if (comments_open()) : ?>
@@ -76,7 +76,7 @@ if (post_password_required()) { ?>
 
 
   </div> <!--//wp-tab -->
-  <div id="tb-tab">
+  <div id="tb-tab" class="block">
 
 <?php
 if (!empty($comments_by_type['pings'])) : // let's seperate pings/trackbacks from comments
@@ -91,7 +91,7 @@ if (!empty($comments_by_type['pings'])) : // let's seperate pings/trackbacks fro
     </ol>
 
 <?php else : ?>
-  <p class="nopingback">There hasent been any pingbacks made to wordpress so far on this post.</p>
+  <p class="nopingback">No Trackbacks.</p>
 <?php endif; ?>
 
 

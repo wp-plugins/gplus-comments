@@ -54,11 +54,11 @@ function gplus_assets_load()
 {
   wp_register_script('gplus_plus_js',('https://apis.google.com/js/plusone.js'),null,null,false);
   wp_enqueue_script('gplus_plus_js');
-  wp_register_style('gcom_css', plugins_url('gplus-comments/tabs.css'));
+  wp_register_style('gcom_css', plugins_url('gplus-comments/tabs.css'),null,"1.0.1","all");
   wp_enqueue_style('gcom_css');
-  wp_register_style('font_css', plugins_url('gplus-comments/font/font.css'));
+  wp_register_style('font_css', plugins_url('gplus-comments/font/font.css'),null,"1.0.1","all");
   wp_enqueue_style('font_css');
-  wp_register_script('gplus_tabs_js',plugins_url('gplus-comments/tabs.js'),'jquery-ui-tabs',1.0,false);
+  wp_register_script('gplus_tabs_js',plugins_url('gplus-comments/tabs.js'),null,"1.0.1",false);
   wp_enqueue_script('gplus_tabs_js');
 }
 add_action('wp_head', 'gplus_assets_load', 10,1);

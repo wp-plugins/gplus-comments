@@ -5,20 +5,21 @@ Tags: comments, threaded, email, notification, spam, avatars, community, profile
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.2
-Tested up to: 3.5
-Stable Tag: 1.0.0
+Tested up to: 3.6
+Stable Tag: 1.0.1
 
 This Google+ comment system replaces your WordPress comment system with your G+ powered comments hosted by Google.
 
 == Description ==
 
-This plugin lets you use the Google+ Comment System thats implented on blogger.com unofficially on your Wordpress.org blog.
-Google+ makes commenting easier and more interactive, while connecting websites and commenters.
+This plugin lets you use the Google+ Comment System thats implented on blogger.com (unofficially) on your Wordpress.org blog. Google+ makes commenting easier and more interactive, while connecting websites and commenters.
 
 You can see a live demo at [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).
 
-G+ Comments system for WordPress seamlessly replaces the wordpress commenting system with Google's.
-At this time Comments do **NOT** sync between Google+ commenting system and the wordpress built in one.
+G+ Comments system for WordPress seamlessly adds to the wordpress commenting system tabs with Google's.
+
+* Comments do **NOT** sync between Google+ commenting system and the wordpress built in one.
+* You should have [Google Authorship](http://plus.google.com/authorship) already enabled for your blog
 
 **This Plugin is not made nor endorced by Google Inc.**
 
@@ -46,8 +47,15 @@ Yes, both systems can be active at the same time.
 * None for now
 
 == Change Log ==
-= 0.8.0 =
+
+= 1.0.1 =
+* Removed the need for jquery-ui-tab fixing the tab display for some versions of wordpress
+* changed the tab colors to closer match the G+ Comments and blend into more websites seemlessly
+* fixed a typo when no comments had been made yet
+
+= 1.0.0 =
 * Release via Wordpress.org
+
 = 0.8.0 =
 * Initial public release
 
