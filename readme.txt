@@ -6,7 +6,7 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.2
 Tested up to: 3.6
-Stable Tag: 1.0.1
+Stable Tag: 1.0.2
 
 This Google+ comment system replaces your WordPress comment system with your G+ powered comments hosted by Google.
 
@@ -29,7 +29,7 @@ G+ Comments system for WordPress seamlessly adds to the wordpress commenting sys
 
 == Installation ==
 
-**NOTE: It is recommended that you [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plugin it is still in a heavy development state.**
+**NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plugins.**
 
 1. Unpack archive to this archive to the 'wp-content/plugins/' directory inside
    of WordPress
@@ -43,10 +43,10 @@ G+ Comments system for WordPress seamlessly adds to the wordpress commenting sys
 = Does the normal commenting stay active ? =
 Yes, both systems can be active at the same time.
 
-== Upgrade Notice ==
-* None for now
-
 == Change Log ==
+
+= 1.0.2 =
+* fixed bumping the version
 
 = 1.0.1 =
 * Removed the need for jquery-ui-tab fixing the tab display for some versions of wordpress

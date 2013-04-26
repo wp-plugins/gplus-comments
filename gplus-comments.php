@@ -7,7 +7,7 @@
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
  * @copyright      2013 Brandon Holtsclaw
  * @license        LICENSE
- * @version        Release: 1.0.0
+ * @version        Release: 1.0.2
  * @filesource     wp-content/plugins/gplus-comments/gplus-comments.php
  * @link           http://codex.wordpress.org/Theme_Development#Comments_.28comments.php.29
  * @since          available since Release 0.8.0
