@@ -12,6 +12,33 @@ defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
 defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
 defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', WP_PLUGIN_URL . '/' . basename(__FILE__));
 
+function gplus_comments_action_links($links, $file) {
+    $plugin_file = basename(__FILE__);
+    if (basename($file) == $plugin_file) {
+           $settings_link = '<a href="edit-comments.php?page=gpluscomments">Configure</a>';
+        array_unshift($links, $settings_link);
+    }
+    return $links;
+}
+add_filter('plugin_action_links', 'gplus_plugin_action_links', 10, 2);
+
+
+function gplus_add_pages() {
+    //add_comments_page( $page_title, $menu_title, $capability, $menu_slug, $function);
+     add_submenu_page(
+         'Google+ Comments',
+         'Google+ Comments',
+         'manage_options',
+         'gpluscomments',
+         'gpluscomments_manage'
+     );
+}
+add_action('admin_menu', 'gplus_add_pages', 10);
+
+function gpluscomments_admin() {
+    include_once(dirname(__FILE__) . '/lib/gplus-comments-admin.php');
+}
+
 $EMBED = false; //ugly global hack
 function gplus_comments_template($value)
 {
