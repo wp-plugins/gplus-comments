@@ -4,7 +4,7 @@ Plugin Name: Google+ Comments
 Plugin URI: http://www.cloudhero.net/gplus-comments
 Description: The Google+ comments plugin replaces or runs along side your WordPress comment system with your comments hosted and powered by Google+.
 Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
-Version: 1.0.3
+Version: 1.0.4
 Author URI: http://www.brandonholtsclaw.com/
 */
 
@@ -79,14 +79,17 @@ function gplus_comments_open($open, $post_id=null)
  */
 function gplus_assets_load()
 {
-  wp_register_script('gplus_plus_js',('https://apis.google.com/js/plusone.js'),null,null,false);
-  wp_enqueue_script('gplus_plus_js');
-  wp_register_style('gcom_css', plugins_url('gplus-comments/tabs.css'),null,"1.0.1","all");
-  wp_enqueue_style('gcom_css');
-  wp_register_style('font_css', plugins_url('gplus-comments/font/font.css'),null,"1.0.1","all");
-  wp_enqueue_style('font_css');
-  wp_register_script('gplus_tabs_js',plugins_url('gplus-comments/tabs.js'),null,"1.0.1",false);
-  wp_enqueue_script('gplus_tabs_js');
+  if(!is_admin())
+  {
+    wp_register_script('gplus_plus_js',('https://apis.google.com/js/plusone.js'),null,null,false);
+    wp_enqueue_script('gplus_plus_js');
+    wp_register_style('gcom_css', plugins_url('gplus-comments/tabs.css'),null,"1.0.1","all");
+    wp_enqueue_style('gcom_css');
+    wp_register_style('font_css', plugins_url('gplus-comments/font/font.css'),null,"1.0.1","all");
+    wp_enqueue_style('font_css');
+    wp_register_script('gplus_tabs_js',plugins_url('gplus-comments/tabs.js'),null,"1.0.1",false);
+    wp_enqueue_script('gplus_tabs_js');
+  }
 }
 add_action('wp_head', 'gplus_assets_load', 10,1);
 //add_filter('get_comments_number', 'gplus_comments_number');
