@@ -6,13 +6,13 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.2
 Tested up to: 3.6
-Stable Tag: 1.0.4
+Stable Tag: 1.0.5
 
 Google Plus Comments adds a Tabbed Comment view with G+ Comment threads to your WordPress install while still ( optional ) keeping Native comments, plus can add in other comment systems as well.
 
 == Description ==
 Google Plus Comments  adds a tabbed Comment view with G+ Comment threads to your WordPress install while still ( optional ) keeping Native comments, plus can add in other comment systems as well.
-This plugin lets you use the Google+ Comment System thats implented on blogger.com (unofficially) on your Wordpress.org blog. 
+This plugin lets you use the Google+ Comment System thats implented on blogger.com (unofficially) on your Wordpress.org blog.
 Google+ makes commenting easier and more interactive, while connecting websites and commenters.
 
 You can see a live demo at [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).
@@ -43,6 +43,8 @@ G+ Comments system for WordPress seamlessly adds to the wordpress commenting sys
 Yes, both systems can be active at the same time.
 
 == Change Log ==
+= 1.0.5 =
+trivial update to fix php warnings
 = 1.0.4 =
 * hotfix to fix accidental loading of css and js in the admin area
 = 1.0.3 =

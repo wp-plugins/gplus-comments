@@ -4,7 +4,7 @@ Plugin Name: Google+ Comments
 Plugin URI: http://www.cloudhero.net/gplus-comments
 Description: The Google+ comments plugin replaces or runs along side your WordPress comment system with your comments hosted and powered by Google+.
 Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
-Version: 1.0.4
+Version: 1.0.5
 Author URI: http://www.brandonholtsclaw.com/
 */
 
@@ -20,7 +20,7 @@ function gplus_comments_action_links($links, $file) {
     }
     return $links;
 }
-add_filter('plugin_action_links', 'gplus_plugin_action_links', 10, 2);
+//add_filter('plugin_action_links', 'gplus_comments_action_links', 10, 2);
 
 
 function gplus_add_pages() {
@@ -30,13 +30,13 @@ function gplus_add_pages() {
          'Google+ Comments',
          'manage_options',
          'gpluscomments',
-         'gpluscomments_manage'
+         'gpluscomments_admin'
      );
 }
-add_action('admin_menu', 'gplus_add_pages', 10);
+//add_action('admin_menu', 'gplus_add_pages', 10);
 
 function gpluscomments_admin() {
-    include_once(dirname(__FILE__) . '/lib/gplus-comments-admin.php');
+    //include_once(dirname(__FILE__) . '/lib/gplus-comments-admin.php');
 }
 
 $EMBED = false; //ugly global hack
