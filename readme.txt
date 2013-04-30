@@ -14,14 +14,14 @@ Google+ Comments for WordPress makes the comment section tabbed seamlessly addin
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
 This plug-in lets you use the Google+ comment system thats implemented on blogger.com (unofficially) on your WordPress.org blog along side WordPress comments if desired.
 
-G+ Comments for WordPress seamlessly changes the WordPress commenting system to use tabs adding in G+ and optionally others.
+**NOTE: Using this plugin or JavaScript to load comments does _NOT_ have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.**
 
 **Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
 * I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
 
-**Note:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
+**NOTE:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
 
 == Screenshots ==
 1. G+ Comments with all tabs turned on.
