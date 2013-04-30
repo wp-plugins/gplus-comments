@@ -58,21 +58,31 @@
     padding-left: 0.5em;
 }
 
-#comment-tabs 
+#comment-tabs
 {
-  margin-bottom: 1em; 
+  margin-bottom: 1em;
 }
 
-#comment-tabs .block 
+#comment-tabs .block
 {
   border: 1px solid #ddd;
-  padding: 3px;
+  padding: 5px;
   margin: 0;
-  display: none; 
+  display: none;
 }
 
-#comment-tabs .block.active 
+#gplus-tab
 {
-  display: block; 
+  padding: 0px !important;
+}
+
+#fb-tab
+{
+  padding: 3px !important;
+}
+
+#comment-tabs .block.active
+{
+  display: block;
 }
 

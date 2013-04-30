@@ -6,12 +6,12 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.1.1
+Stable Tag: 1.2.0
 
-Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, WordPress Comments, and Trackbacks
+Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
 
 == Description ==
-Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, WordPress Comments, and Trackbacks
+Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
 This plug-in lets you use the Google+ comment system thats implemented on blogger.com (unofficially) on your WordPress.org blog along side WordPress comments if desired.
 
 G+ Comments for WordPress seamlessly changes the WordPress commenting system to use tabs adding in G+ and optionally others.
@@ -42,9 +42,15 @@ G+ Comments for WordPress seamlessly changes the WordPress commenting system to 
 Yes, both systems can be active at the same time.
 
 == Change Log ==
+= 1.2.0 =
+* added Plugin options page to show or hide various comment tabs from the wp-admin area
+* comment tabs are now responsive and should adjust to nearly any layout
+* now using async javascript to load G+ comments for faster page loading
+* added option to show facebook comments
+* added option to show disqus comments
+* updated screenshot
 = 1.1.0 =
 * many typo fixes
-* refactoring plug-in file layout to accommodate easier user template reuse in custom themes
 * initial ( non-functional ) options page placeholder and associated hooks added
 * fixed bugs that removed native WordPress comment functionality by accident, any native options should work now
 * better loading of the css/js via wp_register/wp_encueue system to let other plug-ins possibly modify our

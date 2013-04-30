@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.1.1
+Version: 1.2.0
 */
 
 /* * *
@@ -23,7 +23,7 @@ Version: 1.1.1
 
 function gplus_comments_init()
 {
-  define( 'GPLUS_COMMENTS_VERSION', '1.1.0' );
+  define( 'GPLUS_COMMENTS_VERSION', '1.1.5' );
   defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
   defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
   defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
@@ -32,22 +32,37 @@ function gplus_comments_init()
 
   wp_register_style('gplus_comments_font', GPLUS_COMMENTS_URL . '/font/font.css', null, GPLUS_COMMENTS_VERSION, "all");
   wp_register_style('gplus_comments_tabs_css', GPLUS_COMMENTS_URL . '/styles/tabs.css', array("gplus_comments_font"), GPLUS_COMMENTS_VERSION, "screen");
-  wp_register_script('google_plusone', 'https://apis.google.com/js/plusone.js', null, null, true);
   wp_register_script('gplus_comments_tabs_js', GPLUS_COMMENTS_URL . '/js/tabs.js', null, GPLUS_COMMENTS_VERSION, true);
 }
 add_action('init', 'gplus_comments_init');
 
+function gplus_comments_admin_init()
+{
+  register_setting( 'gplus-comments-options', 'gplus-comments' );
+}
+add_action( 'admin_init', 'gplus_comments_admin_init' );
+
+register_activation_hook( __FILE__, function() {
+  $options = array();
+  $options = get_option('gplus-comments');
+  $options["show_fb"] = 1;
+  $options["show_wp"] = 1;
+  $options["show_disqus"] = 0;
+  $options["show_trackbacks"] = 0;
+  update_option('gplus-comments', $options);
+});
+
 /**
- * Replace the theme's loaded comments.php with our own G+ souped up version.
+ * Replace the theme's loaded comments.php with our own souped up version.
  */
 function gplus_comments_template($file)
 {
     global $post, $comments;
 
-    if (!(is_singular() && (have_comments() || 'open' == $post->comment_status)))
-    {
-      return;
-    }
+    /**
+     * Do we even need to load ?
+     */
+    if (!(is_singular() && (have_comments() || 'open' == $post->comment_status))) { return; }
 
     /**
      * This will allow theme authors to override the comments template files easy.
@@ -65,26 +80,12 @@ add_filter('comments_template', 'gplus_comments_template');
 //add_filter('get_comments_number', 'gplus_comments_get_comments_number');
 
 /**
- * Hide the default comment form from spammers mark all comments as closed.
- */
-/*
-function gplus_comments_open($open, $post_id=null)
-{
-    global $EMBED;
-    if ($EMBED) return false;
-    return $open;
-}
-add_filter('comments_open', 'gplus_comments_open');
-*/
-
-/**
  * Load up our assets for frontend to make us pretty and functional.
  */
 function gplus_comments_load_assets()
 {
   wp_enqueue_style('gplus_comments_font');
   wp_enqueue_style('gplus_comments_tabs_css');
-  wp_enqueue_script('google_plusone');
   wp_enqueue_script('gplus_comments_tabs_js');
 }
 add_action('wp_head', 'gplus_comments_load_assets');
@@ -118,8 +119,8 @@ function gplus_comments_admin_menu()
      add_submenu_page
      (
          'edit-comments.php',
-         'Google+ Comments for WordPress',
-         'Google+',
+         'Google+ Comments',
+         'G+ Comments',
          'manage_options',
          'gplus-comments',
          'gplus_comments_render_admin_page'
@@ -132,6 +133,6 @@ add_action('admin_menu', 'gplus_comments_admin_menu', 10);
  */
 function gplus_comments_admin_head()
 {
-  print "<script type='text/javascript'>jQuery(document).ready(function($) { $('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WordPress'); $('#menu-comments').find('a.wp-has-submenu').attr('href', 'edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul')); $('#wp-admin-bar-comments a.ab-item').attr('href', 'edit-comments.php?page=gplus-comments'); });</script>";
+  print "<script type='text/javascript'>jQuery(document).ready(function($) { $('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments'); $('#menu-comments').find('a.wp-has-submenu').attr('href', 'edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul')); $('#wp-admin-bar-comments a.ab-item').attr('href', 'edit-comments.php?page=gplus-comments'); });</script>";
 }
 add_action('admin_head', 'gplus_comments_admin_head');
