@@ -1,7 +1,7 @@
 === Google+ Comments for WordPress ===
 Contributors: imbrandon
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Tags: comments, threaded, email, notification, spam, avatars, community, profile, widget, google, google plus
+Tags: comments, threaded, email, notification, spam, avatars, community, profile, widget, google, google plus, facebook, disqus, google+, +1, plus one, widget, tabs, comment tabs
 License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
