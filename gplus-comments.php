@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.1.0
+Version: 1.1.1
 */
 
 /* * *
@@ -20,7 +20,6 @@ Version: 1.1.0
  * * *     THEME IT IS USED BY THE PLUGIN INSTEAD OF ITS OWN TEMPLATE MARKUP.
  * * *
  */
-define('GPLUS_COMMENTS_DEBUG', true);
 
 function gplus_comments_init()
 {
@@ -96,7 +95,7 @@ add_action('wp_head', 'gplus_comments_load_assets');
 function gplus_comments_plugin_action_links($links, $file) {
   $plugin_file = basename(__FILE__);
   if (basename($file) == $plugin_file) {
-    $settings_link = '<a href="edit-comments.php?page=gplus-comments-admin">Settings</a>';
+    $settings_link = '<a href="edit-comments.php?page=gplus-comments">Settings</a>';
     array_unshift($links, $settings_link);
   }
   return $links;
