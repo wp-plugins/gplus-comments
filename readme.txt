@@ -19,13 +19,12 @@ G+ Comments for WordPress seamlessly changes the WordPress commenting system to 
 **Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
-* G+ comments are all stored on Google and are _not_ synced between WordPress native comments or any others that may be active.
-* If you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can at [http://www.wepay.com/donations/brandonholtsclaw](http://www.wepay.com/donations/brandonholtsclaw). Thanks!
+* I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
 
 **Note:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
 
 == Screenshots ==
-1. G+ Comments Live on CloudHero.net
+1. G+ Comments with all tabs turned on.
 
 == Installation ==
 **NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plug-ins.**
