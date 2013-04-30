@@ -1,17 +1,20 @@
-<div class="wrap">
 <?php
+// No direct access
+defined('ABSPATH') or exit;
+
+echo "<div class='wrap'>";
+
 if ( !current_user_can( 'manage_options' ) )  {
     wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 }
 
-// Processing an option submit form. Set global vars from the form values.
 if( isset($_POST['updateoptions'])  && $_POST['updateoptions']==1) {
     update_option( 'GPLUSCOMMENTS-WIDTH', $_POST['width'] );
 
     if ( ! (is_numeric(get_option('GPLUSCOMMENTS-WIDTH')) && get_option('GPLUSCOMMENTS-WIDTH')> 0)) {
         update_option( 'GPLUSCOMMENTS-WIDTH', 500 );
     }
-    
+
     if( isset($_POST['dynamicwidth'])  && $_POST['dynamicwidth']==1) {
         update_option( 'GPLUSCOMMENTS-DYNAMICWIDTH', 1 );
     } else {
@@ -22,15 +25,16 @@ if( isset($_POST['updateoptions'])  && $_POST['updateoptions']==1) {
 <form method="POST"  action="?page=gpluscomments">
 <table>
     <tr>
-        <td style="text-align:center;" colspan="2"><h2 style="padding: 10px 0; text-decoration:underline;"><span style="color:#0047f1;">G</span><span style="color:#de0c32;">o</span><span style="color:#bc8000;">o</span><span style="color:#0047f1;">g</span><span style="color:#00b018;">l</span><span style="color:#dd172c;">e</span>+ Comments Options</h2></td>
+        <td style="text-align:left;" colspan="2"><h2 style="margin: 3px;padding: 10px 0; text-decoration:underline;">Google+ Comments for WordPress Options</h2>
+            <h3 style="margin: 3px;padding: 10px 0; text-decoration:none;">( Page Disabled , this is only the initial mock-up, many more <em>working</em> options with the next release )</h3></td>
     </tr>
     <tr>
         <td style="text-align:right;">Width:&nbsp;</td>
-        <td style="padding:10px 5px;"><input type="text" name="width"  <?php if(get_option('GPLUSCOMMENTS-DYNAMICWIDTH') == 1){ echo "readonly"; } ?> value="<?php echo get_option('GOOGLEPLUSCOMMENTS-WIDTH')?>" />
+        <td style="padding:10px 5px;"><input type="text" name="width" disabled <?php if(get_option('GPLUSCOMMENTS-DYNAMICWIDTH') == 1){ echo "readonly"; } ?> value="<?php echo get_option('GOOGLEPLUSCOMMENTS-WIDTH')?>" />
     </tr>
     <tr>
         <td style="text-align:right;">Dynamic Width:&nbsp;</td>
-        <td style="padding:10px 5px;"><input type="checkbox" name="dynamicwidth" <?php if(get_option('GPLUSCOMMENTS-DYNAMICWIDTH') == 1){echo "checked=\"checked\"";} ?> value="1" /> <i> [Fixes Google+ comment bug for responsive sites]</i></td>
+        <td style="padding:10px 5px;"><input type="checkbox" name="dynamicwidth" disabled <?php if(get_option('GPLUSCOMMENTS-DYNAMICWIDTH') == 1){echo "checked=\"checked\"";} ?> value="1" /> <i> [Fixes Google+ comment bug for responsive sites]</i></td>
     </tr>
     <tr>
         <td style="text-align:right; padding:20px 0 0 0;">
