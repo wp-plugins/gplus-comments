@@ -16,10 +16,11 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 
 G+ Comments for WordPress seamlessly changes the WordPress commenting system to use tabs adding in G+ and optionally others.
 
-=== Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments). ===
+**Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
 * G+ comments are all stored on Google and are _not_ synced between WordPress native comments or any others that may be active.
+* If you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can at [http://www.wepay.com/donations/brandonholtsclaw](http://www.wepay.com/donations/brandonholtsclaw). Thanks!
 
 **Note:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
 
