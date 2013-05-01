@@ -40,6 +40,14 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 == Frequently Asked Questions ==
 = Does the normal commenting stay active ? =
 Yes, both systems can be active at the same time.
+= Can I choose what Tab to make Default? =
+Not at this time but it is a planned feature.
+= Can I enable or disable commenting systems I'm not using ? =
+Yes, only choose to show the tabs you wish to use via the wp-admin Options Page.
+= Can I disable WordPress Native comments so all new comments are made via Google+ but still show the historic WordPress Comments ? =
+Yes, just disable WP comments like you normally would and then leave the Show WordPress Comments option checked in the Google+ Comments Options.
+= What if I ... =
+I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
 = 1.2.0 =
