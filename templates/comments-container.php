@@ -63,6 +63,7 @@ if(GPLUS_COMMENTS_DEBUG){
 
   <?php if($options['show_fb']) : ?>
   <div id="fb-tab" class="block content-tab">
+
   <div id="facebookcomments"></div>
   <script>
     //facebook comments
