@@ -11,7 +11,14 @@ window.___gcfg = {lang: 'en'};
   s.parentNode.insertBefore(po, s);
 })(document);
 
+
+(function(){
+  jQuery("#comment-tabs").tabs();
+})(jQuery);
+
+
 //tab switch
+/*
 jQuery('#comment-tabs').find('a').click(function(e){
     e.preventDefault();
     var el = jQuery(this);
@@ -21,3 +28,4 @@ jQuery('#comment-tabs').find('a').click(function(e){
     jQuery('#comment-tabs').find('div').removeClass('active');
     jQuery('#comment-tabs').find(el.attr('href')).addClass('active');
 });
+*/

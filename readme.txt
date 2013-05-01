@@ -6,9 +6,9 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.2.0
+Stable Tag: 1.2.1
 
-Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, & More
+Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
 == Description ==
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
@@ -25,6 +25,7 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 
 == Screenshots ==
 1. G+ Comments with all tabs turned on.
+2. Admin Options ( as of 1.2.0 )
 
 == Installation ==
 **NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plug-ins.**
@@ -40,8 +41,21 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 == Frequently Asked Questions ==
 = Does the normal commenting stay active ? =
 Yes, both systems can be active at the same time.
+= Can I choose what Tab to make Default? =
+Not at this time but it is a planned feature.
+= Can I enable or disable commenting systems I'm not using ? =
+Yes, only choose to show the tabs you wish to use via the wp-admin Options Page.
+= Can I disable WordPress Native comments so all new comments are made via Google+ but still show the historic WordPress Comments ? =
+Yes, just disable WP comments like you normally would and then leave the Show WordPress Comments option checked in the Google+ Comments Options.
+= What if I ... =
+I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.2.1 =
+* updates to the tab css so it dont mix with some themes
+* updates to the font css so it dont mix with some themes
+* added a check for php 5.3+ with a sensible error message
+* ensured jquery-ui-tabs is loaded now explicitly
 = 1.2.0 =
 * added Plugin options page to show or hide various comment tabs from the wp-admin area
 * comment tabs are now responsive and should adjust to nearly any layout
