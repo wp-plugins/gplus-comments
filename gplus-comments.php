@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.2.7
+Version: 1.2.8
 */
 
 /* * *     !! WORDPRESS DEVELOPERS AND THEMERS : PLEASE READ BEFORE YOU EDIT THIS FILE.
@@ -36,7 +36,7 @@ if (version_compare(phpversion(), '5.3', '<')) {
 
 function gplus_comments_init()
 {
-  define( 'GPLUS_COMMENTS_VERSION', '1.2.7' );
+  define( 'GPLUS_COMMENTS_VERSION', '1.2.8' );
   defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
   defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
   defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
