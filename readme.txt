@@ -8,7 +8,7 @@ Requires at least: 3.3
 Tested up to: 3.6
 Stable Tag: 1.2.0
 
-Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, & More
+Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
 == Description ==
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
@@ -25,6 +25,7 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 
 == Screenshots ==
 1. G+ Comments with all tabs turned on.
+2. Admin Options ( as of 1.2.0 )
 
 == Installation ==
 **NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plug-ins.**
