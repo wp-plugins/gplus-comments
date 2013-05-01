@@ -34,12 +34,12 @@ if(GPLUS_COMMENTS_DEBUG){
 <div id="comment-tabs">
 
   <ul class="controls inline clearfix">
-    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i></a></li>
+    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i><?php echo $options['gplus_title'];?></a></li>
     <?php
-    if($options['show_fb']) { echo "<li><a href='#fb-tab'><i class='icon-facebook'></i></a></li>\n"; }
-    if($options['show_disqus']) { echo "<li><a href='#disqus-tab'><i class='icon-comment-alt'></i></a></li>\n"; }
-    if($options['show_wp']) { echo "<li><a href='#wp-tab'><i class='icon-wordpress'></i></a></li>\n"; }
-    if($options['show_trackbacks']) { echo "<li><a href='#tb-tab'><i class='icon-share-alt'></i></a></li>\n"; }
+    if($options['show_fb']) { echo "<li><a href='#fb-tab'><i class='icon-facebook'></i>".$options['fb_title']."</a></li>\n"; }
+    if($options['show_disqus']) { echo "<li><a href='#disqus-tab'><i class='icon-comment-alt'></i>".$options['disqus_title']."</a></li>\n"; }
+    if($options['show_wp']) { echo "<li><a href='#wp-tab'><i class='icon-wordpress'></i>".$options['wp_title']."</a></li>\n"; }
+    if($options['show_trackbacks']) { echo "<li><a href='#tb-tab'><i class='icon-share-alt'></i>".$options['tb_title']."</a></li>\n"; }
     ?>
   </ul>
 
