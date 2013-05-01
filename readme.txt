@@ -1,12 +1,12 @@
 === Google+ Comments for WordPress ===
-Contributors: imbrandon
+Contributors: bholtsclaw
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
 Tags: comments, threaded, email, notification, spam, avatars, community, profile, widget, google, google plus, facebook, disqus, google+, +1, plus one, widget, tabs, comment tabs
 License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.2.5
+Stable Tag: 1.2.9
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
@@ -51,6 +51,14 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.2.9 =
+* lets REALLY not set everyones background to white ... srsly.
+= 1.2.8 =
+* dont set everyones page background to #fff ( white )
+= 1.2.7 =
+* move missing styles from theme to plugin
+= 1.2.6 =
+* make all tab css !important and scoped so it does not inherit from the page easily
 = 1.2.5 =
 * version bump to fix svn botch
 * minor css adjustments for tabs
