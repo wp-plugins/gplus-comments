@@ -43,12 +43,12 @@ if(GPLUS_COMMENTS_DEBUG){
     ?>
   </ul>
 
-  <div id="gplus-tab" class="block active">
+  <div id="gplus-tab" class="block active content-tab">
     <script> var gpluswidth = jQuery('#gplus-tab').innerWidth(); document.write('<g:comments href="<?php echo the_permalink(); ?>" width="'+ ( gpluswidth - 2 )+'" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD"></g:comments>');</script>
   </div> <!--//gplus-tab -->
 
   <?php if($options['show_disqus'] && !empty($options['disqus_shortname'])) : ?>
-  <div id="disqus-tab" class="block">
+  <div id="disqus-tab" class="block content-tab">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = '<?php echo $options["disqus_shortname"]; ?>';
@@ -62,7 +62,7 @@ if(GPLUS_COMMENTS_DEBUG){
   <?php endif; ?>
 
   <?php if($options['show_fb']) : ?>
-  <div id="fb-tab" class="block">
+  <div id="fb-tab" class="block content-tab">
   <div id="facebookcomments"></div>
   <script>
     //facebook comments
@@ -85,7 +85,7 @@ if(GPLUS_COMMENTS_DEBUG){
   <?php endif; ?>
 
   <?php if($options['show_wp']) : ?>
-  <div id="wp-tab" class="block clearfix">
+  <div id="wp-tab" class="block clearfix content-tab">
 
 <?php if (have_comments()) : ?>
     <h6 id="comments">
@@ -126,7 +126,7 @@ if(GPLUS_COMMENTS_DEBUG){
   <?php endif; ?>
 
   <?php if($options['show_trackbacks']) : ?>
-  <div id="tb-tab" class="block">
+  <div id="tb-tab" class="block content-tab clearfix">
     <?php
     if (!empty($comments_by_type['pings'])) : // let's seperate pings/trackbacks from comments
       $count = count($comments_by_type['pings']); $txt = __('Pings&#47;Trackbacks');
