@@ -1,19 +1,5 @@
 /* 2013 Brandon Holtsclaw */
 
-//gplus comments
-window.___gcfg = {lang: 'en'};
-(function(d) {
-  var po = d.createElement('script');
-  po.type = 'text/javascript';
-  po.async = true;
-  po.src = '//apis.google.com/js/plusone.js';
-  var s = d.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(po, s);
-})(document);
-
-(function(){
-  jQuery("#comment-tabs").tabs();
-})(jQuery);
 
 //tab switch
 /*

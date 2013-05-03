@@ -49,6 +49,14 @@ if(GPLUS_COMMENTS_DEBUG){
 
   <div id="gplus-tab" class="block active content-tab">
     <script> var gpluswidth = jQuery('#gplus-tab').innerWidth(); document.write('<g:comments href="<?php echo the_permalink(); ?>" width="'+ ( gpluswidth - 2 )+'" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD"></g:comments>');</script>
+    <script type="text/javascript">
+      window.___gcfg = {lang: 'en'};
+      (function(d) {
+        var po = d.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = '//apis.google.com/js/plusone.js';
+        (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(po);
+      })(document);
+    </script>
   </div> <!--//gplus-tab -->
 
   <?php if($options['show_disqus'] && !empty($options['disqus_shortname'])) : ?>
@@ -56,11 +64,11 @@ if(GPLUS_COMMENTS_DEBUG){
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = '<?php echo $options["disqus_shortname"]; ?>';
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        (function(d) {
+            var dsq = d.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
+            (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(dsq);
+        })(document);
     </script>
   </div> <!--//disqus-tab -->
   <?php endif; ?>
@@ -148,3 +156,8 @@ if(GPLUS_COMMENTS_DEBUG){
 
 </div> <!--//comment tabs -->
 
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery("#comment-tabs").tabs();
+});
+</script>
