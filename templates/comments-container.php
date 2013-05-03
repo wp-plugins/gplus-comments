@@ -32,14 +32,18 @@ if(GPLUS_COMMENTS_DEBUG){
 }
 ?>
 <div id="comment-tabs">
-
+  <?php
+    if(!empty($options['comment_area_label'])) {
+      echo "<h4>".$options['comment_area_label']."</h4>";
+    }
+  ?>
   <ul class="controls inline clearfix">
-    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i><?php echo $options['gplus_title'];?></a></li>
+    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i> <?php echo $options['gplus_label'];?></a></li>
     <?php
-    if($options['show_fb']) { echo "<li><a href='#fb-tab'><i class='icon-facebook'></i>".$options['fb_title']."</a></li>\n"; }
-    if($options['show_disqus']) { echo "<li><a href='#disqus-tab'><i class='icon-comment-alt'></i>".$options['disqus_title']."</a></li>\n"; }
-    if($options['show_wp']) { echo "<li><a href='#wp-tab'><i class='icon-wordpress'></i>".$options['wp_title']."</a></li>\n"; }
-    if($options['show_trackbacks']) { echo "<li><a href='#tb-tab'><i class='icon-share-alt'></i>".$options['tb_title']."</a></li>\n"; }
+    if($options['show_fb']) { echo "<li><a href='#fb-tab'><i class='icon-facebook'></i> ".$options['fb_label']."</a></li>\n"; }
+    if($options['show_disqus']) { echo "<li><a href='#disqus-tab'><i class='icon-comment-alt'></i> ".$options['disqus_label']."</a></li>\n"; }
+    if($options['show_wp']) { echo "<li><a href='#wp-tab'><i class='icon-wordpress'></i> ".$options['wp_label']."</a></li>\n"; }
+    if($options['show_trackbacks']) { echo "<li><a href='#tb-tab'><i class='icon-share-alt'></i> ".$options['tb_label']."</a></li>\n"; }
     ?>
   </ul>
 

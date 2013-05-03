@@ -11,11 +11,9 @@ window.___gcfg = {lang: 'en'};
   s.parentNode.insertBefore(po, s);
 })(document);
 
-
 (function(){
   jQuery("#comment-tabs").tabs();
 })(jQuery);
-
 
 //tab switch
 /*

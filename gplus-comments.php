@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.2.9
+Version: 1.3.0
 */
 
 /* * *     !! WORDPRESS DEVELOPERS AND THEMERS : PLEASE READ BEFORE YOU EDIT THIS FILE.
@@ -36,7 +36,7 @@ if (version_compare(phpversion(), '5.3', '<')) {
 
 function gplus_comments_init()
 {
-  define( 'GPLUS_COMMENTS_VERSION', '1.2.9' );
+  define( 'GPLUS_COMMENTS_VERSION', '1.3.0' );
   defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
   defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
   defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
@@ -46,6 +46,9 @@ function gplus_comments_init()
   wp_register_style('gplus_comments_font', GPLUS_COMMENTS_URL . '/font/font.css', null, GPLUS_COMMENTS_VERSION, "all");
   wp_register_style('gplus_comments_tabs_css', GPLUS_COMMENTS_URL . '/styles/tabs.css', array("gplus_comments_font"), GPLUS_COMMENTS_VERSION, "screen");
   wp_register_script('gplus_comments_tabs_js', GPLUS_COMMENTS_URL . '/js/tabs.js', array('jquery-ui-tabs'), GPLUS_COMMENTS_VERSION, true);
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('jquery-ui-core');
+  wp_enqueue_script('jquery-ui-tabs');
 }
 add_action('init', 'gplus_comments_init');
 
@@ -97,16 +100,16 @@ add_filter('comments_template', 'gplus_comments_template');
 /**
  * Load up our assets for frontend to make us pretty and functional.
  */
-function gplus_comments_load_assets()
+function gplus_comments_enqueue_scripts()
 {
-  wp_enqueue_script('jquery');
-  wp_enqueue_script('jquery-ui-core');
-  wp_enqueue_script('jquery-ui-tabs');
+  //wp_enqueue_script('jquery');
+  //wp_enqueue_script('jquery-ui-core');
+  //wp_enqueue_script('jquery-ui-tabs');
   wp_enqueue_style('gplus_comments_font');
   wp_enqueue_style('gplus_comments_tabs_css');
   wp_enqueue_script('gplus_comments_tabs_js');
 }
-add_action('wp_head', 'gplus_comments_load_assets');
+add_action('wp_footer', 'gplus_comments_enqueue_scripts');
 
 /**
  * Set the link for settings under the plugin name on the wp-admin plugins page
