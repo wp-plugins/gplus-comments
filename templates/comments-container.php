@@ -11,9 +11,9 @@
 // No direct access
 defined('ABSPATH') or exit;
 
-echo "\n\n<!-- ****************************************************************************************************************************************-->\n";
-echo "<!-- Google+ Comments for Wordpress (http://wordpress.org/extend/plugins/gplus-comments/) by Brandon Holtsclaw (http://www.brandonholtsclaw.com) -->\n";
-echo "<!-- ****************************************************************************************************************************************-->\n\n";
+echo "\n\n<!-- ************************************************************************************************************************************************************************-->\n";
+echo "<!-- Google+ Comments for Wordpress v".GPLUS_COMMENTS_VERSION." (http://wordpress.org/extend/plugins/gplus-comments/) by Brandon Holtsclaw (http://www.brandonholtsclaw.com) -->\n";
+echo "<!-- ************************************************************************************************************************************************************************-->\n\n";
 
 if (post_password_required()) {
   echo "<p class='nocomments'>This post is password protected.</p>";
@@ -32,31 +32,43 @@ if(GPLUS_COMMENTS_DEBUG){
 }
 ?>
 <div id="comment-tabs">
-
+  <?php
+    if(!empty($options['comment_area_label'])) {
+      echo "<h4>".$options['comment_area_label']."</h4>";
+    }
+  ?>
   <ul class="controls inline clearfix">
-    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i><?php echo $options['gplus_title'];?></a></li>
+    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i> <?php echo $options['gplus_label'];?></a></li>
     <?php
-    if($options['show_fb']) { echo "<li><a href='#fb-tab'><i class='icon-facebook'></i>".$options['fb_title']."</a></li>\n"; }
-    if($options['show_disqus']) { echo "<li><a href='#disqus-tab'><i class='icon-comment-alt'></i>".$options['disqus_title']."</a></li>\n"; }
-    if($options['show_wp']) { echo "<li><a href='#wp-tab'><i class='icon-wordpress'></i>".$options['wp_title']."</a></li>\n"; }
-    if($options['show_trackbacks']) { echo "<li><a href='#tb-tab'><i class='icon-share-alt'></i>".$options['tb_title']."</a></li>\n"; }
+    if($options['show_fb']) { echo "<li><a href='#fb-tab'><i class='icon-facebook'></i> ".$options['fb_label']."</a></li>\n"; }
+    if($options['show_disqus']) { echo "<li><a href='#disqus-tab'><i class='icon-comment-alt'></i> ".$options['disqus_label']."</a></li>\n"; }
+    if($options['show_wp']) { echo "<li><a href='#wp-tab'><i class='icon-wordpress'></i> ".$options['wp_label']."</a></li>\n"; }
+    if($options['show_trackbacks']) { echo "<li><a href='#tb-tab'><i class='icon-share-alt'></i> ".$options['tb_label']."</a></li>\n"; }
     ?>
   </ul>
 
   <div id="gplus-tab" class="block active content-tab">
-    <script> var gpluswidth = jQuery('#gplus-tab').innerWidth(); document.write('<g:comments href="<?php echo the_permalink(); ?>" width="'+ ( gpluswidth - 2 )+'" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD"></g:comments>');</script>
+    <script> var gpluswidth = jQuery('#gplus-tab').innerWidth(); document.write('<g:comments href="<?php echo the_permalink(); ?>" width="'+ ( gpluswidth - 2 )+'" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</g:comments>');</script>
+    <script type="text/javascript">
+      window.___gcfg = {lang: 'en'};
+      (function(d) {
+        var po = d.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = '//apis.google.com/js/plusone.js';
+        (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(po);
+      })(document);
+    </script>
   </div> <!--//gplus-tab -->
 
   <?php if($options['show_disqus'] && !empty($options['disqus_shortname'])) : ?>
   <div id="disqus-tab" class="block content-tab">
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread">Loading Disqus Comments ...</div>
     <script type="text/javascript">
         var disqus_shortname = '<?php echo $options["disqus_shortname"]; ?>';
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        (function(d) {
+            var dsq = d.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
+            (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(dsq);
+        })(document);
     </script>
   </div> <!--//disqus-tab -->
   <?php endif; ?>
@@ -64,9 +76,8 @@ if(GPLUS_COMMENTS_DEBUG){
   <?php if($options['show_fb']) : ?>
   <div id="fb-tab" class="block content-tab">
 
-  <div id="facebookcomments"></div>
+  <div id="facebookcomments">Loading Facebook Comments ...</div>
   <script>
-    //facebook comments
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -143,4 +154,3 @@ if(GPLUS_COMMENTS_DEBUG){
   <?php endif; ?>
 
 </div> <!--//comment tabs -->
-

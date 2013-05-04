@@ -6,7 +6,7 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.2.9
+Stable Tag: 1.3.0
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
@@ -19,13 +19,13 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 **Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
-* I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
+ I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
 
 **NOTE:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
 
 == Screenshots ==
-1. G+ Comments with all tabs turned on.
-2. Admin Options ( as of 1.2.0 )
+1. G+ Comments in Action.
+2. Admin Options ( as of 1.3.0 )
 
 == Installation ==
 **NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plug-ins.**
@@ -51,6 +51,13 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.3.0 =
+* completely overhauled the css used to show the tabs
+* added optional labels for each of the tabs
+* added optional label for commenting area
+* tweaked the ordering of the css and js loading to work in more circumstances
+* added a check for PHP 5.3+ or newer
+* updated screenshots
 = 1.2.9 =
 * lets REALLY not set everyones background to white ... srsly.
 = 1.2.8 =
