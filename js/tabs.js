@@ -1,7 +1,9 @@
 /* 2013 Brandon Holtsclaw */
 
+(function ($) {
+  $("#comment-tabs").tabs();
+})(jQuery);
 
-//tab switch
 /*
 jQuery('#comment-tabs').find('a').click(function(e){
     e.preventDefault();

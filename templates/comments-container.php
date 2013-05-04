@@ -11,9 +11,9 @@
 // No direct access
 defined('ABSPATH') or exit;
 
-echo "\n\n<!-- ****************************************************************************************************************************************-->\n";
-echo "<!-- Google+ Comments for Wordpress (http://wordpress.org/extend/plugins/gplus-comments/) by Brandon Holtsclaw (http://www.brandonholtsclaw.com) -->\n";
-echo "<!-- ****************************************************************************************************************************************-->\n\n";
+echo "\n\n<!-- ************************************************************************************************************************************************************************-->\n";
+echo "<!-- Google+ Comments for Wordpress v".GPLUS_COMMENTS_VERSION." (http://wordpress.org/extend/plugins/gplus-comments/) by Brandon Holtsclaw (http://www.brandonholtsclaw.com) -->\n";
+echo "<!-- ************************************************************************************************************************************************************************-->\n\n";
 
 if (post_password_required()) {
   echo "<p class='nocomments'>This post is password protected.</p>";
@@ -48,7 +48,7 @@ if(GPLUS_COMMENTS_DEBUG){
   </ul>
 
   <div id="gplus-tab" class="block active content-tab">
-    <script> var gpluswidth = jQuery('#gplus-tab').innerWidth(); document.write('<g:comments href="<?php echo the_permalink(); ?>" width="'+ ( gpluswidth - 2 )+'" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD"></g:comments>');</script>
+    <script> var gpluswidth = jQuery('#gplus-tab').innerWidth(); document.write('<g:comments href="<?php echo the_permalink(); ?>" width="'+ ( gpluswidth - 2 )+'" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</g:comments>');</script>
     <script type="text/javascript">
       window.___gcfg = {lang: 'en'};
       (function(d) {
@@ -61,7 +61,7 @@ if(GPLUS_COMMENTS_DEBUG){
 
   <?php if($options['show_disqus'] && !empty($options['disqus_shortname'])) : ?>
   <div id="disqus-tab" class="block content-tab">
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread">Loading Disqus Comments ...</div>
     <script type="text/javascript">
         var disqus_shortname = '<?php echo $options["disqus_shortname"]; ?>';
         (function(d) {
@@ -76,9 +76,8 @@ if(GPLUS_COMMENTS_DEBUG){
   <?php if($options['show_fb']) : ?>
   <div id="fb-tab" class="block content-tab">
 
-  <div id="facebookcomments"></div>
+  <div id="facebookcomments">Loading Facebook Comments ...</div>
   <script>
-    //facebook comments
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -155,9 +154,3 @@ if(GPLUS_COMMENTS_DEBUG){
   <?php endif; ?>
 
 </div> <!--//comment tabs -->
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-  jQuery("#comment-tabs").tabs();
-});
-</script>

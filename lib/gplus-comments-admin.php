@@ -3,7 +3,7 @@
 defined('ABSPATH') or exit;
 ?>
 <div class="wrap">
-<h2>Google+ Comments for WordPress</h2>
+<h2>Google+ Comments for WordPress ( v<?php echo GPLUS_COMMENTS_VERSION; ?> )</h2>
 <form method="POST"  action="options.php">
 <?php settings_fields( 'gplus-comments-options' ); ?>
 <?php $options = get_option( 'gplus-comments' ); ?>
