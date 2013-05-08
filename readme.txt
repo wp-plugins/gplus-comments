@@ -15,21 +15,18 @@ Google+ Comments for WordPress makes the comment section tabbed seamlessly addin
 
 If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a beer from the moon. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
 
-This plug-in lets you use the Google+ comment system thats implemented on blogger.com on your WordPress.org blog along side WordPress comments if desired.
+**Live Demo @** [www.cloudhero.net](http://www.cloudhero.net/)
 
-**NOTE: Using this plugin or JavaScript to load comments does _NOT_ have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.**
-
-**Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
+**Using this plugin or JavaScript to load comments does _NOT_ have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.**
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
-* I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
-
-**NOTE:** 
-* This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
 * Big thanks to [Kev Quirk](https://plus.google.com/107532714495314593816/posts) over at [Refugeeks](http://www.refugeeks.com) for the Banner at the top of [our wp.org page](http://wordpress.org/extend/plugins/gplus-comments/)
+* I've setup a page so if you want to [Donate](http://www.wepay.com/donations/brandonholtsclaw) to this plugins development, now you can. Thanks!
+
+_This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter._
 
 == Screenshots ==
-1. G+ Comments in Action.
+1. In Action.
 2. Admin Options
 
 == Installation ==
@@ -47,7 +44,7 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 = Does the normal commenting stay active ? =
 Yes, both systems can be active at the same time.
 = Can I choose what Tab to make Default? =
-Not at this time but it is a planned feature.
+Yes, as of 1.4.0 you can.
 = Can I enable or disable commenting systems I'm not using ? =
 Yes, only choose to show the tabs you wish to use via the wp-admin Options Page.
 = Can I disable WordPress Native comments so all new comments are made via Google+ but still show the historic WordPress Comments ? =
