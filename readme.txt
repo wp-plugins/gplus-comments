@@ -43,9 +43,9 @@ _This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Fa
 == Frequently Asked Questions ==
 = Do you need any other plugins to use the other commenting systems like Disqus ? =
 No. All needed code for any of the available commenting systems is included with this plugin.
-= I'd like support for X commenting system, will you add it ?=
+= I'd like support for X commenting system, will you add it ? =
 Sure, most likely. If there is not a technical reason not to then I'd be glad to add other commenting systems. Just file a support request asking for it and we'll go from there.
-= Wont loading Comments with Javascript hurt my SEO ? =
+= Will loading Comments with Javascript hurt my SEO ? =
 No, that information is based on the way things used to be. Now not only does it not hurt your SEO it can actually help it with more +1's for your content, as well as JS comments from G+, Facebook, Twitter, and others is now fully indexed by google. Plus more engagement and thus content as well. For more info see [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.
 = Does the normal commenting stay active ? =
 Yes, both systems can be active at the same time.
