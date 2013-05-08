@@ -21,14 +21,8 @@ if (post_password_required()) {
 }
 
 $options = get_option("gplus-comments");
-
-if(GPLUS_COMMENTS_DEBUG){
-  echo "\n<!--\n";
-  echo "DEBUG: " . print_r(GPLUS_COMMENTS_DEBUG,true) . "\n";
-  echo "VERSION: " . print_r(GPLUS_COMMENTS_VERSION,true) . "\n";
-  echo "DIR: " . print_r(GPLUS_COMMENTS_DIR,true) . "\n";
-  echo "URL: " . print_r(GPLUS_COMMENTS_URL,true) . "\n";
-  echo "-->\n\n";
+if(empty($options['tab_order'])) {
+  $options['tab_order'] = GPLUS_COMMENTS_DEFAULT_TAB_ORDER;
 }
 ?>
 <div id="comment-tabs">
@@ -38,17 +32,33 @@ if(GPLUS_COMMENTS_DEBUG){
     }
   ?>
   <ul class="controls inline clearfix">
-    <li class="active"><a href="#gplus-tab"><i class="icon-googleplus"></i> <?php echo $options['gplus_label'];?></a></li>
     <?php
-    if($options['show_fb']) { echo "<li><a href='#fb-tab'><i class='icon-facebook'></i> ".$options['fb_label']."</a></li>\n"; }
-    if($options['show_disqus']) { echo "<li><a href='#disqus-tab'><i class='icon-comment-alt'></i> ".$options['disqus_label']."</a></li>\n"; }
-    if($options['show_wp']) { echo "<li><a href='#wp-tab'><i class='icon-wordpress'></i> ".$options['wp_label']."</a></li>\n"; }
-    if($options['show_trackbacks']) { echo "<li><a href='#tb-tab'><i class='icon-share-alt'></i> ".$options['tb_label']."</a></li>\n"; }
+      $tab_order = explode(',',$options['tab_order']);
+      $active = ' class="active"';
+      foreach ($tab_order as $tab) {
+        echo "<li${active}><a href='#${tab}-tab'>";
+        if(!$options['hide_icons'])
+        {
+          echo "<img src='".GPLUS_COMMENTS_URL."/images/icons/${tab}.png'>";
+        }
+        echo $options[${tab}.'_label']."</a></li>\n";
+        $active = '';
+      }
     ?>
   </ul>
 
-  <div id="gplus-tab" class="block active content-tab">
-    <script> var gpluswidth = jQuery('#gplus-tab').innerWidth(); document.write('<g:comments href="<?php echo the_permalink(); ?>" width="'+ ( gpluswidth - 2 )+'" first_party_property="BLOGGER" view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</g:comments>');</script>
+  <script>
+    jQuery(document).ready(function($) {
+      window.comment_tab_width = $('#comment-tabs').innerWidth();
+    });
+  </script>
+  <?php if(in_array('gplus', $tab_order)) : ?>
+  <div id="gplus-tab" class="block content-tab clearfix">
+    <script>
+      jQuery(document).ready(function($) {
+        $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
+      });
+    </script>
     <script type="text/javascript">
       window.___gcfg = {lang: 'en'};
       (function(d) {
@@ -58,9 +68,10 @@ if(GPLUS_COMMENTS_DEBUG){
       })(document);
     </script>
   </div> <!--//gplus-tab -->
+  <?php endif; ?>
 
-  <?php if($options['show_disqus'] && !empty($options['disqus_shortname'])) : ?>
-  <div id="disqus-tab" class="block content-tab">
+  <?php if(in_array('disqus', $tab_order) && !empty($options['disqus_shortname'])) : ?>
+  <div id="disqus-tab" class="block content-tab clearfix">
     <div id="disqus_thread">Loading Disqus Comments ...</div>
     <script type="text/javascript">
         var disqus_shortname = '<?php echo $options["disqus_shortname"]; ?>';
@@ -73,8 +84,8 @@ if(GPLUS_COMMENTS_DEBUG){
   </div> <!--//disqus-tab -->
   <?php endif; ?>
 
-  <?php if($options['show_fb']) : ?>
-  <div id="fb-tab" class="block content-tab">
+  <?php if(in_array('facebook', $tab_order)) : ?>
+  <div id="facebook-tab" class="block content-tab clearfix">
 
   <div id="facebookcomments">Loading Facebook Comments ...</div>
   <script>
@@ -88,16 +99,15 @@ if(GPLUS_COMMENTS_DEBUG){
 
     var fbc = document.getElementById('facebookcomments');
     jQuery(document).ready(function() {
-      var fbwidth = jQuery('#gplus-tab').innerWidth();
-      fbc.innerHTML = '<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-width="'+(fbwidth - 5)+'" data-mobile="auto"></div>';
+      fbc.innerHTML = '<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>';
       FB.XFBML.parse(fbc);
     });
   </script>
   </div> <!--//fb-tab -->
   <?php endif; ?>
 
-  <?php if($options['show_wp']) : ?>
-  <div id="wp-tab" class="block clearfix content-tab">
+  <?php if(in_array('wordpress', $tab_order)) : ?>
+  <div id="wordpress-tab" class="block clearfix content-tab">
 
 <?php if (have_comments()) : ?>
     <h6 id="comments">
@@ -137,8 +147,8 @@ if(GPLUS_COMMENTS_DEBUG){
   </div> <!--//wp-tab -->
   <?php endif; ?>
 
-  <?php if($options['show_trackbacks']) : ?>
-  <div id="tb-tab" class="block content-tab clearfix">
+  <?php if(in_array('trackback', $tab_order)) : ?>
+  <div id="trackback-tab" class="block content-tab clearfix">
     <?php
     if (!empty($comments_by_type['pings'])) : // let's seperate pings/trackbacks from comments
       $count = count($comments_by_type['pings']); $txt = __('Pings&#47;Trackbacks');
