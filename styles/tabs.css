@@ -741,8 +741,9 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-tabs .ui-tabs-nav li a {
     float: left;
-    padding: .5em 1em;
+    padding: 0em 1em;
     text-decoration: none;
+    margin: 1em;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
     margin-bottom: -1px;
@@ -1003,11 +1004,11 @@ body .ui-tooltip {
     border: none;
 }
 
-#comment-tabs ul li img {
+#comment-tabs ul.controls li img {
   width: 16px;
   padding: 0px;
-  margin: 5px;
-  margin-bottom: 10px;
+  margin-right: 5px;
+  /* margin-bottom: 10px; */
   border: 0;
 }
 
