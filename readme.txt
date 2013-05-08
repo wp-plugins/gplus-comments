@@ -20,8 +20,8 @@ If a user is required to create an account with your site before they can commen
 **Using this plugin or JavaScript to load comments does _NOT_ have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.**
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
-* Big thanks to [Kev Quirk](https://plus.google.com/107532714495314593816/posts) over at [Refugeeks](http://www.refugeeks.com) for the Banner at the top of [our wp.org page](http://wordpress.org/extend/plugins/gplus-comments/)
-* I've setup a page so if you want to [Donate](http://www.wepay.com/donations/brandonholtsclaw) to this plugins development, now you can. Thanks!
+* Big thanks to [Kev Quirk](https://plus.google.com/107532714495314593816/posts) over at [Refugeeks](http://www.refugeeks.com) for the Banner at the top of [our plugin page](http://wordpress.org/extend/plugins/gplus-comments/)
+* I've setup a page so if you want to [Donate](http://www.wepay.com/donations/brandonholtsclaw) to this plugins development, now you can.
 
 _This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter._
 
