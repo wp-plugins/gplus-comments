@@ -6,20 +6,23 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.3.0
+Stable Tag: 1.4.0
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
 == Description ==
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
-This plug-in lets you use the Google+ comment system thats implemented on blogger.com (unofficially) on your WordPress.org blog along side WordPress comments if desired.
+
+If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a beer from the moon. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
+
+This plug-in lets you use the Google+ comment system thats implemented on blogger.com on your WordPress.org blog along side WordPress comments if desired.
 
 **NOTE: Using this plugin or JavaScript to load comments does _NOT_ have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.**
 
 **Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
- I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
+* I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
 
 **NOTE:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
 
@@ -51,6 +54,13 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.4.0 =
+* You can now change the default order of the tabs
+* The first tab is now default so something other than G+ can be default
+* Official color icons now used instead of the icon font
+* JS now loaded inline in the footer reducing http calls
+* Icons can now optionally be hidden
+* Misc css cleanups and tweaks
 = 1.3.0 =
 * completely overhauled the css used to show the tabs
 * added optional labels for each of the tabs
@@ -103,8 +113,3 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 * Release via WordPress.org
 = 0.8.0 =
 * Initial public release
-
-== Support ==
-* Visit http:///www.cloudhero.net/gplus-comments limited help & documentation.
-* I also recommend the [WordPress HelpCenter](http://wphelpcenter.com/) for extended help.
-

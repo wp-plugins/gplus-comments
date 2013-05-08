@@ -760,7 +760,7 @@ button.ui-button::-moz-focus-inner {
 .ui-tabs .ui-tabs-panel {
     display: block;
     border-width: 0;
-    padding: 1em 1.4em;
+    padding: 1em 0;
     background: none;
 }
 .ui-tooltip {
@@ -952,11 +952,6 @@ body .ui-tooltip {
     border-radius: 8px;
 }
 
-#comment-tabs .content-tab {
-  /* background: #fff !important ;*/
-}
-
-
 #gplus-tab , #fb-tab , #tb-tab, #wp-tab, #disqus-tab {
   padding: 0 !important ;
   margin: 0 !important ;
@@ -967,6 +962,7 @@ body .ui-tooltip {
   border: 0 !important ;
   padding: 0 !important ;
   margin: 0 !important ;
+  width: 100% !important;
 }
 
 #comment-tabs {
@@ -975,9 +971,8 @@ body .ui-tooltip {
   margin: 0 !important ;
 }
 
-#fb-tab {
-  padding-top: 10px !important;
-  padding-left: 3px !important;
+#comment-tabs .content-tab {
+  background: #fff !important;
 }
 
 /*
@@ -1008,10 +1003,11 @@ body .ui-tooltip {
     border: none;
 }
 
-#comment-tabs ul li .ui-tabs-nav .ui-state-default a {
-    color: #c0c0c0;
+#comment-tabs ul li img {
+  width: 16px;
+  padding: 0px;
+  margin: 5px;
+  margin-bottom: 10px;
+  border: 0;
 }
 
-#comment-tabs ul li .ui-tabs-nav .ui-state-active a {
-    color: #333;
-}
