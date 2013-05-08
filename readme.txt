@@ -24,11 +24,13 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
 * I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
 
-**NOTE:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
+**NOTE:** 
+* This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
+* Big thanks to [Kev Quirk](https://plus.google.com/107532714495314593816/posts) over at [Refugeeks](http://www.refugeeks.com) for the Banner at the top of [our wp.org page](http://wordpress.org/extend/plugins/gplus-comments/)
 
 == Screenshots ==
 1. G+ Comments in Action.
-2. Admin Options ( as of 1.3.0 )
+2. Admin Options
 
 == Installation ==
 **NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plug-ins.**
