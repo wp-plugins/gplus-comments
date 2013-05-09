@@ -6,14 +6,14 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.4.3
+Stable Tag: 1.4.4
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
 == Description ==
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
 
-If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a beer from the moon. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
+If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a soda from the mars. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
 
 **Live Demo @** [www.cloudhero.net](http://www.cloudhero.net/)
 
@@ -59,6 +59,9 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.4.4 =
+* make the comments template load at a higher priority so it correctly loads when child themes are used
+* moved the defines out of init so they are always available ( like durring activation ), this fixes default tab order is correctly set for new installs
 = 1.4.3 =
 * load wp comments template from current theme if it exists so original styles take effect
 = 1.4.2 =
