@@ -6,7 +6,7 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.4.0
+Stable Tag: 1.4.2
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
@@ -15,20 +15,19 @@ Google+ Comments for WordPress makes the comment section tabbed seamlessly addin
 
 If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a beer from the moon. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
 
-This plug-in lets you use the Google+ comment system thats implemented on blogger.com on your WordPress.org blog along side WordPress comments if desired.
+**Live Demo @** [www.cloudhero.net](http://www.cloudhero.net/)
 
-**NOTE: Using this plugin or JavaScript to load comments does _NOT_ have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.**
-
-**Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
+Using this plugin or JavaScript to load comments **does _NOT_** have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
-* I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
+* Big thanks to [Kev Quirk](https://plus.google.com/107532714495314593816/posts) over at [Refugeeks](http://www.refugeeks.com) for the Banner at the top of [our plugin page](http://wordpress.org/extend/plugins/gplus-comments/)
+* I've setup a page so if you want to [Donate](http://www.wepay.com/donations/brandonholtsclaw) to this plugins development, now you can.
 
-**NOTE:** This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter.
+_This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter._
 
 == Screenshots ==
-1. G+ Comments in Action.
-2. Admin Options ( as of 1.3.0 )
+1. In Action.
+2. Admin Options
 
 == Installation ==
 **NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plug-ins.**
@@ -42,10 +41,16 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 2. From your blog administration, activate the plugin.
 
 == Frequently Asked Questions ==
+= Do you need any other plugins to use the other commenting systems like Disqus ? =
+No. All needed code for any of the available commenting systems is included with this plugin.
+= I'd like support for X commenting system, will you add it ? =
+Sure, most likely. If there is not a technical reason not to then I'd be glad to add other commenting systems. Just file a support request asking for it and we'll go from there.
+= Will loading Comments with Javascript hurt my SEO ? =
+No, that information is based on the way things used to be. Now not only does it not hurt your SEO it can actually help it with more +1's for your content, as well as JS comments from G+, Facebook, Twitter, and others is now fully indexed by google. Plus more engagement and thus content as well. For more info see [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.
 = Does the normal commenting stay active ? =
 Yes, both systems can be active at the same time.
 = Can I choose what Tab to make Default? =
-Not at this time but it is a planned feature.
+Yes, as of 1.4.0 you can.
 = Can I enable or disable commenting systems I'm not using ? =
 Yes, only choose to show the tabs you wish to use via the wp-admin Options Page.
 = Can I disable WordPress Native comments so all new comments are made via Google+ but still show the historic WordPress Comments ? =
@@ -54,6 +59,11 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.4.2 =
+* added missing trackback icon
+* tighened up css margins for tabs
+= 1.4.1 =
+* minor css hotfixes for tab margin and spacing 
 = 1.4.0 =
 * You can now change the default order of the tabs
 * The first tab is now default so something other than G+ can be default
