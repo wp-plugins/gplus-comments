@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.3
+Version: 1.4.4
 */
 
 /* * *     !! WORDPRESS DEVELOPERS AND THEMERS : PLEASE READ BEFORE YOU EDIT THIS FILE.
@@ -23,6 +23,14 @@ Version: 1.4.3
 // No direct access
 defined('ABSPATH') or exit;
 
+define( 'GPLUS_COMMENTS_VERSION', '1.4.4' );
+define( 'GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress' );
+defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
+defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
+defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
+defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/lib");
+defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/templates");
+
 if (version_compare(phpversion(), '5.3', '<'))
 {
   function gplus_comments_php_too_low()
@@ -35,14 +43,6 @@ if (version_compare(phpversion(), '5.3', '<'))
 
 function gplus_comments_init()
 {
-  define( 'GPLUS_COMMENTS_VERSION', '1.4.3' );
-  define( 'GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress' );
-  defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
-  defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
-  defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
-  defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/lib");
-  defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/templates");
-
   wp_register_style('gplus_comments_tabs_css', GPLUS_COMMENTS_URL . '/styles/tabs.css', null, GPLUS_COMMENTS_VERSION, "all");
   wp_enqueue_script('jquery');
   wp_enqueue_script('jquery-ui-core');
@@ -89,7 +89,7 @@ function gplus_comments_template($file)
       return GPLUS_COMMENTS_TEMPLATES . '/comments-container.php';
     }
 }
-add_filter('comments_template', 'gplus_comments_template');
+add_filter('comments_template', 'gplus_comments_template', 4269);
 //add_filter('get_comments_number', 'gplus_comments_get_comments_number');
 
 /**
@@ -99,13 +99,13 @@ function gplus_comments_enqueue_styles()
 {
   wp_enqueue_style('gplus_comments_tabs_css');
 }
-add_action('wp_head', 'gplus_comments_enqueue_styles', 4299);
+add_action('wp_head', 'gplus_comments_enqueue_styles', 4269);
 
 function gplus_comments_enqueue_scripts()
 {
   print "\n<script>jQuery('#comment-tabs').tabs();</script>\n";
 }
-add_action('wp_footer', 'gplus_comments_enqueue_scripts', 4299);
+add_action('wp_footer', 'gplus_comments_enqueue_scripts', 4269);
 
 /**
  * Set the link for settings under the plugin name on the wp-admin plugins page
