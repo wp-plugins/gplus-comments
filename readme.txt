@@ -40,7 +40,42 @@ _This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Fa
 
 2. From your blog administration, activate the plugin.
 
+3. Enjoy!
+
 == Frequently Asked Questions ==
+= Google+ Comment doesn't work ? =
+**A.K.A. the tabs are in list form instead, or do not show up at all**
+Well, yes, it does. It's used by thousands of websites and if it doesn't work for your website that because there is some problem with how it interacts with the theme or other plugins.
+
+The **most common cause for it not working is a jQuery conflict cause by a theme or a plugin** that either does not properly instantiate jQuery causing an old version and new version to both try and load themselfs unknown to each other, or instantiates a very old version of jQuery that is not compatable with the jQuery this plugin requests to be loaded ( e.g. we tell WordPress to load the jQuery.js + jQuery-UI-Core.js + jQuery-UI-Tabs.js that are both included with WordPress 3.3+ ) ... below may be of some help.
+
+**Here are things to try in order to see what the problem is.**
+
+1 Check jQuery version and make sure you are using the lastest included in WordPress
+  If it's an older version or not enqueued correctly it _will_ cause problems.
+  It may be in your theme or another plugin
+
+1 You may be lacking wp_footer() function in your footer.php of your WordPress theme.
+  Look at the default theme to see how it is implemented and add it into your theme.
+
+1 Try deactivating all plugins one at a time besides lightbox plus and see if if it starts working
+  If it does work after deactivating on then there's a plugin conflict
+
+1 If deactivating plugins doesn't work then there might be a conflict with your theme
+  To isolate you can try an different theme and see if it works.
+
+1 Be sure to clear ALL cache's that may be in effect, both in WP like WP-SuperCache or W3TC and also
+  locally on your machine like the brower and you can even reboot your internet router as a precaution ( and a bit of
+  overkill but hey, why not check everything ) as it could be running a squid transparent cache proxy for you
+  when running DD-WRT or similar as well and ou may not have noticed/known before something like this.
+
+1 There may be a style conflict of some sort, check the Developer console for your browser ( any of them anymore have
+  a debug console / js console , even IE7+ native and others via extensions too ) when the page is loading to check for 
+  error messaged that may help narrow it down.
+
+1 Try deleting the plugin and reinstalling - it may have not completely updated correctly.
+  You'll have to reset your settings so you might want to write them down.  
+
 = Do you need any other plugins to use the other commenting systems like Disqus ? =
 No. All needed code for any of the available commenting systems is included with this plugin.
 = I'd like support for X commenting system, will you add it ? =
