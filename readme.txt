@@ -43,7 +43,7 @@ _This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Fa
 3. Enjoy!
 
 == Frequently Asked Questions ==
-= Google+ Comment doesn't work ? =
+= Google+ Comments for WordPress doesn't work ? =
 _A.K.A. the tabs are in list form instead, or do not show up at all_
 
 Keep Calm and lets step through this, the plugin does indeed work though, It's used by thousands of websites already every day so if it doesn't work for your website that because there is some problem with how it interacts with the theme or other plugins and the info below will help you track what one it is exactly.
@@ -59,8 +59,9 @@ _Here are things to try in order to see what the problem is._
 2. You may be lacking wp_footer() function in your footer.php of your WordPress theme.
   Look at the default theme to see how it is implemented and add it into your theme.
 
-3. Try deactivating all plugins one at a time besides lightbox plus and see if if it starts working
-  If it does work after deactivating on then there's a plugin conflict
+3. Try deactivating all plugins one at a time besides Google+ Comments for WordPress and see if if it starts working
+  Make sure and to clear both WordPress and your Browsers Cache after any plugin changes to make sure you see the correct pages
+  and not a cached version of the same (broken) one. If it does work after deactivating on then there's a plugin conflict.
 
 4. If deactivating plugins doesn't work then there might be a conflict with your theme
   To isolate you can try an different theme and see if it works.
