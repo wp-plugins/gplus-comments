@@ -6,7 +6,7 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.4.4
+Stable Tag: 1.4.5
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
@@ -67,16 +67,16 @@ _Here are things to try in order to see what the problem is._
   To isolate you can try an different theme and see if it works.
 
 5. Be sure to clear ALL cache's that may be in effect, both in WP like WP-SuperCache or W3TC and also
-  locally on your machine like the brower and you can even reboot your internet router as a precaution ( and a bit of
+  locally on your machine like the browser and you can even reboot your Internet router as a precaution ( and a bit of
   overkill but hey, why not check everything ) as it could be running a squid transparent cache proxy for you
-  when running DD-WRT or similar as well and ou may not have noticed/known before something like this.
+  when running DD-WRT or similar as well and you may not have noticed / known before something like this.
 
 6. There may be a style conflict of some sort, check the Developer console for your browser ( any of them anymore have
-  a debug console / js console , even IE7+ native and others via extensions too ) when the page is loading to check for 
+  a debug console / js console , even IE7+ native and others via extensions too ) when the page is loading to check for
   error messaged that may help narrow it down.
 
 7. Try deleting the plugin and reinstalling - it may have not completely updated correctly.
-  You'll have to reset your settings so you might want to write them down.  
+  You'll have to reset your settings so you might want to write them down.
 
 = Do you need any other plugins to use the other commenting systems like Disqus ? =
 No. All needed code for any of the available commenting systems is included with this plugin.
@@ -103,9 +103,12 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.4.5 =
+* load comments.php in a alternate way if the default does not exist in the current theme
+
 = 1.4.4 =
 * make the comments template load at a higher priority so it correctly loads when child themes are used
-* moved the defines out of init so they are always available ( like durring activation ), this fixes default tab order is correctly set for new installs
+* moved the defines out of init so they are always available ( like during activation ), this fixes default tab order is correctly set for new installs
 
 = 1.4.3 =
 * load wp comments template from current theme if it exists so original styles take effect
@@ -115,7 +118,7 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 * tighened up css margins for tabs
 
 = 1.4.1 =
-* minor css hotfixes for tab margin and spacing 
+* minor css hotfixes for tab margin and spacing
 
 = 1.4.0 =
 * You can now change the default order of the tabs

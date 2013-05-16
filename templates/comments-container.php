@@ -2,7 +2,7 @@
 /**
  * Google+ Comments for WordPress Comments Container Template
  *
- * @file           comments-container.php
+ * @file           templates/comments-container.php
  * @package        gplus-comments
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
  * @copyright      2013 Brandon Holtsclaw
@@ -67,6 +67,7 @@ if(empty($options['tab_order'])) {
         (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(po);
       })(document);
     </script>
+    <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
   </div> <!--//gplus-tab -->
   <?php endif; ?>
 
@@ -81,6 +82,7 @@ if(empty($options['tab_order'])) {
             (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(dsq);
         })(document);
     </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div> <!--//disqus-tab -->
   <?php endif; ?>
 
@@ -103,6 +105,7 @@ if(empty($options['tab_order'])) {
       FB.XFBML.parse(fbc);
     });
   </script>
+  <noscript>Please enable JavaScript to view the <a href="https://www.facebook.com/">comments powered by Facebook.</a></noscript>
   </div> <!--//fb-tab -->
   <?php endif; ?>
 
@@ -112,6 +115,10 @@ if(empty($options['tab_order'])) {
   if (file_exists(TEMPLATEPATH . '/comments.php'))
   {
     include_once TEMPLATEPATH . '/comments.php';
+  }
+  elseif (file_exists(TEMPLATEPATH . '/includes/comments.php'))
+  {
+    include_once TEMPLATEPATH . '/includes/comments.php';
   }
   ?>
   </div> <!--//wp-tab -->
