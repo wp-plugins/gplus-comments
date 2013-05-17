@@ -36,7 +36,7 @@ if (version_compare(phpversion(), '5.3', '<'))
   function gplus_comments_php_too_low()
   {
     echo "<div class='error'><p>";
-    echo "Google+ Comments for WordPress requires PHP 5.3+ and will not activate, your current server configuration is running PHP version '" . phpversion() . "' . Any PHP version less than 5.3.0 has reached "End of Life" from PHP.net and no longer receives bugfixes or security updates. The official information on how to update and why at <a href='http://php.net/eol.php' target='_blank'><strong>php.net/eol.php</strong></a>";
+    echo "Google+ Comments for WordPress requires PHP 5.3+ and will not activate, your current server configuration is running PHP version '" . phpversion() . "' . Any PHP version less than 5.3.0 has reached 'End of Life' from PHP.net and no longer receives bugfixes or security updates. The official information on how to update and why at <a href='http://php.net/eol.php' target='_blank'><strong>php.net/eol.php</strong></a>";
     echo "</p></div>";
   }
   add_action('admin_notices', 'gplus_comments_php_too_low');
