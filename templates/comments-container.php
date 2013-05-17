@@ -47,26 +47,19 @@ if(empty($options['tab_order'])) {
     ?>
   </ul>
 
-  <script>
+  <script type="text/javascript">
     jQuery(document).ready(function($) {
       window.comment_tab_width = $('#comment-tabs').innerWidth();
     });
   </script>
   <?php if(in_array('gplus', $tab_order)) : ?>
   <div id="gplus-tab" class="block content-tab clearfix">
-    <script>
-      jQuery(document).ready(function($) {
-        $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
-      });
-    </script>
     <script type="text/javascript">
-      window.___gcfg = {lang: 'en'};
-      (function(d) {
-        var po = d.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = '//apis.google.com/js/plusone.js';
-        (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(po);
-      })(document);
+    jQuery(document).ready(function($) {
+      $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" style="height: 300px;" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
+    });
     </script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
   </div> <!--//gplus-tab -->
   <?php endif; ?>
@@ -89,20 +82,12 @@ if(empty($options['tab_order'])) {
   <?php if(in_array('facebook', $tab_order)) : ?>
   <div id="facebook-tab" class="block content-tab clearfix">
 
+  <div id="fb-root"></div>
   <div id="facebookcomments">Loading Facebook Comments ...</div>
-  <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    var fbc = document.getElementById('facebookcomments');
-    jQuery(document).ready(function() {
-      fbc.innerHTML = '<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>';
-      FB.XFBML.parse(fbc);
+  <script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('#facebookcomments').html('<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>');
     });
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://www.facebook.com/">comments powered by Facebook.</a></noscript>
@@ -119,6 +104,10 @@ if(empty($options['tab_order'])) {
   elseif (file_exists(TEMPLATEPATH . '/includes/comments.php'))
   {
     include_once TEMPLATEPATH . '/includes/comments.php';
+  }
+  else
+  {
+    include_once GPLUS_COMMENTS_TEMPLATES . '/native-comments-fallback.php';
   }
   ?>
   </div> <!--//wp-tab -->
