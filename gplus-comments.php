@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.5
+Version: 1.4.6
 */
 
 /* * *     !! WORDPRESS DEVELOPERS AND THEMERS : PLEASE READ BEFORE YOU EDIT THIS FILE.
@@ -23,7 +23,7 @@ Version: 1.4.5
 // No direct access
 defined('ABSPATH') or exit;
 
-define( 'GPLUS_COMMENTS_VERSION', '1.4.5' );
+define( 'GPLUS_COMMENTS_VERSION', '1.4.6' );
 define( 'GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress' );
 defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
 defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
@@ -35,7 +35,9 @@ if (version_compare(phpversion(), '5.3', '<'))
 {
   function gplus_comments_php_too_low()
   {
-    echo "<div class='error'><p>Google+ Comments for WordPress requires PHP 5.3+, any PHP version less than 5.3 has reached "End of Life" from PHP.net and no longer receives security updates. Here is information on how to update and why from PHP.net at <a href='http://php.net/eol.php' target='_blank'><strong>php.net/eol.php</strong></a></p></div>";
+    echo "<div class='error'><p>";
+    echo "Google+ Comments for WordPress requires PHP 5.3+ and will not activate, your current server configuration is running PHP version '" . phpversion() . "' . Any PHP version less than 5.3.0 has reached "End of Life" from PHP.net and no longer receives bugfixes or security updates. The official information on how to update and why at <a href='http://php.net/eol.php' target='_blank'><strong>php.net/eol.php</strong></a>";
+    echo "</p></div>";
   }
   add_action('admin_notices', 'gplus_comments_php_too_low');
   return;
@@ -150,6 +152,8 @@ add_action('admin_menu', 'gplus_comments_admin_menu', 10);
  */
 function gplus_comments_admin_head()
 {
-  print "<script type='text/javascript'>jQuery(document).ready(function($) { $('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments'); $('#menu-comments').find('a.wp-has-submenu').attr('href', 'edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul')); $('#wp-admin-bar-comments a.ab-item').attr('href', 'edit-comments.php?page=gplus-comments'); });</script>";
+  print "<script type='text/javascript'>jQuery(document).ready(function($){$('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments');$('#menu-comments').find('a.wp-has-submenu').attr('href', 'edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul')); $('#wp-admin-bar-comments a.ab-item').attr('href', 'edit-comments.php?page=gplus-comments'); });</script>";
 }
 add_action('admin_head', 'gplus_comments_admin_head');
+
+
