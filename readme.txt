@@ -6,7 +6,7 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.4.6
+Stable Tag: 1.4.7
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
@@ -103,6 +103,9 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.4.7 =
+* Parse Error Hotfix. Please Update ASAP.
+
 = 1.4.6 =
 * load a default comments file with no native comments shown but an error message if comments.php cannot be found for native comments
 * better error message with link to PHP info on php.net about PHP version 5.3+ requirement and upgrade proceedures
