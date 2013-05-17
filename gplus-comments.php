@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.7
+Version: 1.4.8
 */
 
 /* * *     !! WORDPRESS DEVELOPERS AND THEMERS : PLEASE READ BEFORE YOU EDIT THIS FILE.
@@ -23,7 +23,7 @@ Version: 1.4.7
 // No direct access
 defined('ABSPATH') or exit;
 
-define( 'GPLUS_COMMENTS_VERSION', '1.4.7' );
+define( 'GPLUS_COMMENTS_VERSION', '1.4.8' );
 define( 'GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress' );
 defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
 defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
@@ -152,7 +152,7 @@ add_action('admin_menu', 'gplus_comments_admin_menu', 10);
  */
 function gplus_comments_admin_head()
 {
-  print "<script type='text/javascript'>jQuery(document).ready(function($){$('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments');$('#menu-comments').find('a.wp-has-submenu').attr('href', 'edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul')); $('#wp-admin-bar-comments a.ab-item').attr('href', 'edit-comments.php?page=gplus-comments'); });</script>";
+  print "<script type='text/javascript'>jQuery(document).ready(function($) { $('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments');$('#menu-comments').find('a.wp-has-submenu').attr('href', 'edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul')); $('#wp-admin-bar-comments a.ab-item').attr('href', 'edit-comments.php?page=gplus-comments'); });</script>";
 }
 add_action('admin_head', 'gplus_comments_admin_head');
 
