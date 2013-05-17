@@ -105,6 +105,10 @@ if(empty($options['tab_order'])) {
   {
     include_once TEMPLATEPATH . '/includes/comments.php';
   }
+  else
+  {
+    include_once GPLUS_COMMENTS_TEMPLATES . '/native-comments-fallback.php';
+  }
   ?>
   </div> <!--//wp-tab -->
   <?php endif; ?>

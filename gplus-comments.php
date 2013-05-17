@@ -35,7 +35,7 @@ if (version_compare(phpversion(), '5.3', '<'))
 {
   function gplus_comments_php_too_low()
   {
-    echo '<div class="error"><p>Google+ Comments for WordPress requires PHP 5.3+ and will not work unless you upgrade PHP.</p></div>';
+    echo "<div class='error'><p>Google+ Comments for WordPress requires PHP 5.3+, any PHP version less than 5.3 has reached "End of Life" from PHP.net and no longer receives security updates. Here is information on how to update and why from PHP.net at <a href='http://php.net/eol.php' target='_blank'><strong>php.net/eol.php</strong></a></p></div>";
   }
   add_action('admin_notices', 'gplus_comments_php_too_low');
   return;
