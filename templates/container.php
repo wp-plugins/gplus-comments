@@ -14,7 +14,6 @@ defined('ABSPATH') or exit;
 echo "\n\n";
 echo "<!-- *******************************************************************************************************************-->\n";
 echo "<!-- Google+ Comments for Wordpress v".GPLUS_COMMENTS_VERSION." ( http://wordpress.org/extend/plugins/gplus-comments/ ) -->\n";
-echo "<!-- Author: Brandon Holtsclaw ( http://www.brandonholtsclaw.com ) -->\n";
 echo "<!-- *******************************************************************************************************************-->\n";
 echo "\n";
 
@@ -28,6 +27,13 @@ if(empty($options['tab_order'])) {
   $options['tab_order'] = GPLUS_COMMENTS_DEFAULT_TAB_ORDER;
 }
 ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  window.comment_tab_width = $('#comment-tabs').innerWidth();
+});
+</script>
+
 <div id="comment-tabs">
   <?php
     if(!empty($options['comment_area_label'])) {
@@ -50,11 +56,6 @@ if(empty($options['tab_order'])) {
     ?>
   </ul>
 
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      window.comment_tab_width = $('#comment-tabs').innerWidth();
-    });
-  </script>
 
   <?php if(in_array('gplus', $tab_order)) : ?>
   <div id="gplus-tab" class="block content-tab clearfix">
@@ -63,7 +64,7 @@ if(empty($options['tab_order'])) {
       $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" style="height: 300px;" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
     });
     </script>
-    <script defer type="text/javascript" src="//apis.google.com/js/plusone.js?callback=?"></script>
+    <script type="text/javascript" src="//apis.google.com/js/plusone.js?callback=?"></script>
     <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
   </div> <!--//gplus-tab -->
   <?php endif; ?>
@@ -92,7 +93,7 @@ if(empty($options['tab_order'])) {
       $('#facebookcomments').html('<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>');
     });
   </script>
-  <script defer type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
+  <script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
   <noscript>Please enable JavaScript to view the <a href="https://www.facebook.com/">comments powered by Facebook.</a></noscript>
   </div> <!--//fb-tab -->
   <?php endif; ?>
@@ -107,10 +108,6 @@ if(empty($options['tab_order'])) {
   elseif (file_exists(TEMPLATEPATH . '/includes/comments.php'))
   {
     include_once TEMPLATEPATH . '/includes/comments.php';
-  }
-  else
-  {
-    include_once GPLUS_COMMENTS_TEMPLATES . '/native-comments-fallback.php';
   }
   ?>
   </div> <!--//wp-tab -->

@@ -40,6 +40,8 @@ if (version_compare(phpversion(), '5.3', '<'))
   return;
 }
 
+//require_once GPLUS_COMMENTS_LIB . '/hooks.php';
+
 function gplus_comments_init()
 {
   wp_register_style('gplus_comments_tabs_css', GPLUS_COMMENTS_URL . '/styles/tabs.css', null, GPLUS_COMMENTS_VERSION, "all");
@@ -78,13 +80,13 @@ function gplus_comments_template($file)
     /**
      * This will allow theme authors to override the comments template files easy.
      */
-    if (file_exists(TEMPLATEPATH . '/comments-container.php'))
+    if (file_exists(TEMPLATEPATH . '/container.php'))
     {
-      return TEMPLATEPATH . '/comments-container.php';
+      return TEMPLATEPATH . '/container.php';
     }
     else
     {
-      return GPLUS_COMMENTS_TEMPLATES . '/comments-container.php';
+      return GPLUS_COMMENTS_TEMPLATES . '/container.php';
     }
 }
 add_filter('comments_template', 'gplus_comments_template', 4269);
@@ -139,7 +141,7 @@ add_filter('plugin_action_links', 'gplus_comments_plugin_action_links', 10, 2);
  */
 function gplus_comments_render_admin_page()
 {
-  require GPLUS_COMMENTS_LIB . '/gplus-comments-admin.php';
+  require GPLUS_COMMENTS_LIB . '/admin.php';
 }
 
 /**
@@ -168,13 +170,11 @@ function gplus_comments_admin_head()
 }
 add_action('admin_head', 'gplus_comments_admin_head');
 
-?>
-<!--
+/*
 <a class="twitter-timeline"  href="https://twitter.com/imbrandon"  data-widget-id="330505805105336320">Tweets by @imbrandon</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':
 'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
 fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
--->
-<?php
+*/
 
 
