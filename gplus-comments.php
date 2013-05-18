@@ -11,7 +11,7 @@ Donate link: http://www.wepay.com/donations/brandonholtsclaw
 Version: 1.4.8
 */
 
-/* *    
+/**
  *       DEVELOPERS AND THEMERS : DONT EDIT THIS FILE DIRECTLY
  *       THERE ARE INSTRUCTIONS ON THE PLUGINS WEBPAGE TO CUSTOMIZE IT
  *       SO THAT IT WONT BE LOST ON PLUGIN UPATES.
@@ -49,7 +49,7 @@ function gplus_comments_init()
 }
 add_action('init', 'gplus_comments_init');
 
-add_action('admin_init', function() {} ({
+add_action('admin_init', function() {
   register_setting( 'gplus-comments-options', 'gplus-comments' );
 });
 //add_action( 'admin_init', 'gplus_comments_admin_init' );
@@ -90,20 +90,20 @@ function gplus_comments_template($file)
 add_filter('comments_template', 'gplus_comments_template', 4269);
 
 function gplus_comments_get_comments_number()
-{  
-    global $post;  
-    $url = get_permalink($post->ID);  
-  
-    $filecontent = file_get_contents('https://graph.facebook.com/?ids=' . $url);  
-    $json = json_decode($filecontent);  
-    $count = $json->$url->comments;  
-    $wpCount = get_comments_number();  
-    $realCount = $count + $wpCount;  
-    if ($realCount == 0 || !isset($realCount)) {  
-        $realCount = 0;  
-    }  
-    return $realCount;  
-}  
+{
+    global $post;
+    $url = get_permalink($post->ID);
+
+    $filecontent = file_get_contents('https://graph.facebook.com/?ids=' . $url);
+    $json = json_decode($filecontent);
+    $count = $json->$url->comments;
+    $wpCount = get_comments_number();
+    $realCount = $count + $wpCount;
+    if ($realCount == 0 || !isset($realCount)) {
+        $realCount = 0;
+    }
+    return $realCount;
+}
 //add_filter('get_comments_number', 'gplus_comments_get_comments_number');
 
 /**
@@ -164,14 +164,16 @@ add_action('admin_menu', 'gplus_comments_admin_menu', 10);
  */
 function gplus_comments_admin_head()
 {
-  print "<script type='text/javascript' charset='utf-8'>jQuery(document).ready(function($) { jQuery('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments');jQuery('#menu-comments').find('a.wp-has-submenu').attr('href', 'edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul')); jQuery('#wp-admin-bar-comments a.ab-item').attr('href', 'edit-comments.php?page=gplus-comments'); });</script>";
+  print "<script type='text/javascript' charset='utf-8'>jQuery(document).ready(function(){jQuery('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments');jQuery('#menu-comments').find('a.wp-has-submenu').attr('href','edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul'));jQuery('#wp-admin-bar-comments a.ab-item').attr('href','edit-comments.php?page=gplus-comments');});</script>";
 }
 add_action('admin_head', 'gplus_comments_admin_head');
 
 ?>
 <!--
 <a class="twitter-timeline"  href="https://twitter.com/imbrandon"  data-widget-id="330505805105336320">Tweets by @imbrandon</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':
+'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 -->
 <?php
 

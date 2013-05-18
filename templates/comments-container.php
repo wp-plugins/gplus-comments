@@ -11,9 +11,12 @@
 // No direct access
 defined('ABSPATH') or exit;
 
-echo "\n\n<!-- ************************************************************************************************************************************************************************-->\n";
-echo "<!-- Google+ Comments for Wordpress v".GPLUS_COMMENTS_VERSION." (http://wordpress.org/extend/plugins/gplus-comments/) by Brandon Holtsclaw (http://www.brandonholtsclaw.com) -->\n";
-echo "<!-- ************************************************************************************************************************************************************************-->\n\n";
+echo "\n\n";
+echo "<!-- *******************************************************************************************************************-->\n";
+echo "<!-- Google+ Comments for Wordpress v".GPLUS_COMMENTS_VERSION." ( http://wordpress.org/extend/plugins/gplus-comments/ ) -->\n";
+echo "<!-- Author: Brandon Holtsclaw ( http://www.brandonholtsclaw.com ) -->\n";
+echo "<!-- *******************************************************************************************************************-->\n";
+echo "\n";
 
 if (post_password_required()) {
   echo "<p class='nocomments'>This post is password protected.</p>";
@@ -52,6 +55,7 @@ if(empty($options['tab_order'])) {
       window.comment_tab_width = $('#comment-tabs').innerWidth();
     });
   </script>
+
   <?php if(in_array('gplus', $tab_order)) : ?>
   <div id="gplus-tab" class="block content-tab clearfix">
     <script type="text/javascript">
@@ -59,7 +63,7 @@ if(empty($options['tab_order'])) {
       $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" style="height: 300px;" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
     });
     </script>
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script type="text/javascript" src="//apis.google.com/js/plusone.js?callback=?"></script>
     <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
   </div> <!--//gplus-tab -->
   <?php endif; ?>
@@ -81,10 +85,9 @@ if(empty($options['tab_order'])) {
 
   <?php if(in_array('facebook', $tab_order)) : ?>
   <div id="facebook-tab" class="block content-tab clearfix">
-
   <div id="fb-root"></div>
   <div id="facebookcomments">Loading Facebook Comments ...</div>
-  <script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+  <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('#facebookcomments').html('<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>');
@@ -116,15 +119,16 @@ if(empty($options['tab_order'])) {
   <?php if(in_array('trackback', $tab_order)) : ?>
   <div id="trackback-tab" class="block content-tab clearfix">
     <?php
-    if (!empty($comments_by_type['pings'])) : // let's seperate pings/trackbacks from comments
-      $count = count($comments_by_type['pings']); $txt = __('Pings&#47;Trackbacks');
-    ?>
-      <h6 id="pings"><?php printf( __( '%1$d %2$s for "%3$s"'), $count, $txt, get_the_title() )?></h6>
+    // let's seperate trackbacks from comments
+    if (!empty($comments_by_type['pings'])) :
+      $count = count($comments_by_type['pings']); $txt = __('Trackbacks');
+      ?>
+      <h6 id='pings'><?php printf( __( '%1$d %2$s for "%3$s"'), $count, $txt, get_the_title() )?></h6>
       <ol class="commentlist">
-        <?php wp_list_comments('type=pings&max_depth=<em>'); ?>
+      <?php wp_list_comments('type=pings&max_depth=1'); ?>
       </ol>
     <?php else : ?>
-      <p class="nopingback">No Trackbacks.</p>
+      <p class="notrackbacks">No Trackbacks.</p>
     <?php endif; ?>
   </div> <!--//tb-tab -->
   <?php endif; ?>
