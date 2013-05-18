@@ -63,7 +63,7 @@ if(empty($options['tab_order'])) {
       $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" style="height: 300px;" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
     });
     </script>
-    <script type="text/javascript" src="//apis.google.com/js/plusone.js?callback=?"></script>
+    <script defer type="text/javascript" src="//apis.google.com/js/plusone.js?callback=?"></script>
     <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
   </div> <!--//gplus-tab -->
   <?php endif; ?>
@@ -87,12 +87,12 @@ if(empty($options['tab_order'])) {
   <div id="facebook-tab" class="block content-tab clearfix">
   <div id="fb-root"></div>
   <div id="facebookcomments">Loading Facebook Comments ...</div>
-  <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('#facebookcomments').html('<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>');
     });
   </script>
+  <script defer type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
   <noscript>Please enable JavaScript to view the <a href="https://www.facebook.com/">comments powered by Facebook.</a></noscript>
   </div> <!--//fb-tab -->
   <?php endif; ?>
