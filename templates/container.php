@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
         echo "<li${active}><a href='#${tab}-tab'>";
         if(!$options['hide_icons'])
         {
-          echo "<img src='".GPLUS_COMMENTS_URL."/images/icons/${tab}.png'>";
+          echo "<img src='".GPLUS_COMMENTS_URL."/images/icons/default/${tab}.png'>";
         }
         echo $options[${tab}.'_label']."</a></li>\n";
         $active = '';
@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
 
 
   <?php if(in_array('gplus', $tab_order)) : ?>
-  <div id="gplus-tab" class="block content-tab clearfix">
+  <div id="gplus-tab" class="content-tab clearfix">
     <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" style="height: 300px;" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
   <?php endif; ?>
 
   <?php if(in_array('disqus', $tab_order) && !empty($options['disqus_shortname'])) : ?>
-  <div id="disqus-tab" class="block content-tab clearfix">
+  <div id="disqus-tab" class="content-tab clearfix">
     <div id="disqus_thread">Loading Disqus Comments ...</div>
     <script type="text/javascript">
         var disqus_shortname = '<?php echo $options["disqus_shortname"]; ?>';
@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
   <?php endif; ?>
 
   <?php if(in_array('facebook', $tab_order)) : ?>
-  <div id="facebook-tab" class="block content-tab clearfix">
+  <div id="facebook-tab" class="content-tab clearfix">
   <div id="fb-root"></div>
   <div id="facebookcomments">Loading Facebook Comments ...</div>
   <script type="text/javascript">
@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
   <?php endif; ?>
 
   <?php if(in_array('wordpress', $tab_order)) : ?>
-  <div id="wordpress-tab" class="block clearfix content-tab">
+  <div id="wordpress-tab" class="clearfix content-tab">
   <?php
   if (file_exists(TEMPLATEPATH . '/comments.php'))
   {
@@ -114,7 +114,7 @@ jQuery(document).ready(function($) {
   <?php endif; ?>
 
   <?php if(in_array('trackback', $tab_order)) : ?>
-  <div id="trackback-tab" class="block content-tab clearfix">
+  <div id="trackback-tab" class="content-tab clearfix">
     <?php
     // let's seperate trackbacks from comments
     if (!empty($comments_by_type['pings'])) :
