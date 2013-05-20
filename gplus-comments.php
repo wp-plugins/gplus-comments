@@ -32,9 +32,26 @@ if (version_compare(phpversion(), '5.3', '<'))
   return;
 }
 
-require_once GPLUS_COMMENTS_LIB . '/init.php';
+/**
+ * Returns current plugin version.
+ */
+function gplus_comments_get_version() {
+  $plugin_data = get_plugin_data( realpath(__DIR__ . '/../gplus-comments.php'), false, false );
+  $plugin_version = $plugin_data['Version'];
+  return $plugin_version;
+}
 
-require_once GPLUS_COMMENTS_LIB . '/hooks.php';
+define('GPLUS_COMMENTS_VERSION', '1.4.9');
+defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
+defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
+defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
+defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
+defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/lib");
+defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/templates");
+
+//require __DIR__ . '/lib/init.php';
+
+require GPLUS_COMMENTS_LIB . '/hooks.php';
 
 function gplus_comments_render_admin_page()
 {
