@@ -6,7 +6,7 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.3
 Tested up to: 3.6
-Stable Tag: 1.4.9
+Stable Tag: 1.4.10
 
 Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
@@ -103,6 +103,9 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.4.10 =
+* jQuery typo 
+
 = 1.4.9 =
 * Bugfixes for various issues where you could not click the main content area
 * misc css cleanup
