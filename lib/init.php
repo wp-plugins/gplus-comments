@@ -11,7 +11,7 @@ function gplus_comments_get_version() {
   return $plugin_version;
 }
 
-define('GPLUS_COMMENTS_VERSION', gplus_comments_get_version());
+define('GPLUS_COMMENTS_VERSION', '1.4.9');
 defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
 defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
 defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
