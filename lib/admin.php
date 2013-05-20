@@ -1,6 +1,7 @@
 <?php
 // No direct access
 defined('ABSPATH') or exit;
+
 ?>
 <div class="wrap">
 <h2>Google+ Comments for WordPress ( v<?php echo GPLUS_COMMENTS_VERSION; ?> )</h2>
