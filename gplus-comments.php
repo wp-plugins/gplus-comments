@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.10
+Version: 1.4.11
 */
 
 /**
@@ -36,12 +36,12 @@ if (version_compare(phpversion(), '5.3', '<'))
  * Returns current plugin version.
  */
 function gplus_comments_get_version() {
-  $plugin_data = get_plugin_data( realpath(__DIR__ . '/../gplus-comments.php'), false, false );
+  $plugin_data = get_plugin_data( __FILE__, false, false );
   $plugin_version = $plugin_data['Version'];
   return $plugin_version;
 }
 
-define('GPLUS_COMMENTS_VERSION', '1.4.10');
+define('GPLUS_COMMENTS_VERSION', '1.4.11');
 defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
 defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
 defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
