@@ -119,7 +119,7 @@ add_action('admin_menu', 'gplus_comments_admin_menu', 10);
  */
 function gplus_comments_admin_head()
 {
-  print "<script type='text/javascript' charset='utf-8'>jQuery(document).ready(function(){jQuery('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments');jQuery('#menu-comments').find('a.wp-has-submenu').attr('href','edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo($('#menu-comments').find('.wp-submenu ul'));jQuery('#wp-admin-bar-comments a.ab-item').attr('href','edit-comments.php?page=gplus-comments');});</script>";
+  print "<script type='text/javascript' charset='utf-8'>jQuery(document).ready(function(){jQuery('ul.wp-submenu a[href=\"edit-comments.php\"]').text('WP Comments');jQuery('#menu-comments').find('a.wp-has-submenu').attr('href','edit-comments.php?page=gplus-comments').end().find('.wp-submenu  li:has(a[href=\"edit-comments.php?page=gplus-comments\"])').prependTo( jQuery('#menu-comments').find('.wp-submenu ul'));jQuery('#wp-admin-bar-comments a.ab-item').attr('href','edit-comments.php?page=gplus-comments');});</script>";
 }
 add_action('admin_head', 'gplus_comments_admin_head');
 
