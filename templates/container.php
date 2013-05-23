@@ -1,12 +1,12 @@
 <?php
 /**
- * Google+ Comments for WordPress Comments Container Template
+ * Google+ Comments for WordPress -- Comments Container
  *
- * @file           templates/comments-container.php
+ * @file           templates/container.php
  * @package        gplus-comments
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
  * @copyright      2013 Brandon Holtsclaw
- * @license        GPLv3+
+ * @license        GPL
  */
 // No direct access
 defined('ABSPATH') or exit;
@@ -57,77 +57,36 @@ jQuery(document).ready(function($) {
   </ul>
 
 
-  <?php if(in_array('gplus', $tab_order)) : ?>
-  <div id="gplus-tab" class="content-tab clearfix">
-    <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $('#gplus-tab').html('<div class="g-comments" data-href="<?php echo the_permalink(); ?>" style="height: 300px;" data-width="'+window.comment_tab_width+'" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
-    });
-    </script>
-    <script type="text/javascript" src="//apis.google.com/js/plusone.js?callback=?"></script>
-    <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
-  </div> <!--//gplus-tab -->
-  <?php endif; ?>
-
-  <?php if(in_array('disqus', $tab_order) && !empty($options['disqus_shortname'])) : ?>
-  <div id="disqus-tab" class="content-tab clearfix">
-    <div id="disqus_thread">Loading Disqus Comments ...</div>
-    <script type="text/javascript">
-        var disqus_shortname = '<?php echo $options["disqus_shortname"]; ?>';
-        (function(d) {
-            var dsq = d.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(dsq);
-        })(document);
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div> <!--//disqus-tab -->
-  <?php endif; ?>
-
-  <?php if(in_array('facebook', $tab_order)) : ?>
-  <div id="facebook-tab" class="content-tab clearfix">
-  <div id="fb-root"></div>
-  <div id="facebookcomments">Loading Facebook Comments ...</div>
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $('#facebookcomments').html('<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="<?php echo the_permalink(); ?>" data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>');
-    });
-  </script>
-  <script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
-  <noscript>Please enable JavaScript to view the <a href="https://www.facebook.com/">comments powered by Facebook.</a></noscript>
-  </div> <!--//fb-tab -->
-  <?php endif; ?>
-
-  <?php if(in_array('wordpress', $tab_order)) : ?>
-  <div id="wordpress-tab" class="clearfix content-tab">
   <?php
-  if (file_exists(TEMPLATEPATH . '/comments.php'))
+  if(in_array('gplus', $tab_order))
   {
-    include_once TEMPLATEPATH . '/comments.php';
+    require_once GPLUS_COMMENTS_TEMPLATES . '/partials/gplus.php';
   }
-  elseif (file_exists(TEMPLATEPATH . '/includes/comments.php'))
+
+  if(in_array('disqus', $tab_order) && !empty($options['disqus_shortname']))
   {
-    include_once TEMPLATEPATH . '/includes/comments.php';
+    require_once GPLUS_COMMENTS_TEMPLATES . '/partials/disqus.php';
+  }
+
+  if(in_array('facebook', $tab_order))
+  {
+    require_once GPLUS_COMMENTS_TEMPLATES . '/partials/facebook.php';
+  }
+
+  if(in_array('wordpress', $tab_order))
+  {
+    require_once GPLUS_COMMENTS_TEMPLATES . '/partials/wordpress.php';
+  }
+
+  if(in_array('livefyre', $tab_order))
+  {
+    require_once GPLUS_COMMENTS_TEMPLATES . '/partials/livefyre.php';
+  }
+
+  if(in_array('trackback', $tab_order))
+  {
+    require_once GPLUS_COMMENTS_TEMPLATES . '/partials/trackback.php';
   }
   ?>
-  </div> <!--//wp-tab -->
-  <?php endif; ?>
-
-  <?php if(in_array('trackback', $tab_order)) : ?>
-  <div id="trackback-tab" class="content-tab clearfix">
-    <?php
-    // let's seperate trackbacks from comments
-    if (!empty($comments_by_type['pings'])) :
-      $count = count($comments_by_type['pings']); $txt = __('Trackbacks');
-      ?>
-      <h6 id='pings'><?php printf( __( '%1$d %2$s for "%3$s"'), $count, $txt, get_the_title() )?></h6>
-      <ol class="commentlist">
-      <?php wp_list_comments('type=pings&max_depth=1'); ?>
-      </ol>
-    <?php else : ?>
-      <p class="notrackbacks">No Trackbacks.</p>
-    <?php endif; ?>
-  </div> <!--//tb-tab -->
-  <?php endif; ?>
 
 </div> <!--//comment tabs -->

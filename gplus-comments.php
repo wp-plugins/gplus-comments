@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.11
+Version: 1.4.12
 */
 
 /**
@@ -44,19 +44,15 @@ function gplus_comments_get_version() {
 }
 
 define('GPLUS_COMMENTS_VERSION', gplus_comments_get_version());
-defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
 defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
-defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', dirname(__FILE__));
+defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', __DIR__);
 defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
 defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/lib");
 defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/templates");
+defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
 
 require GPLUS_COMMENTS_LIB . '/hooks.php';
-
-function gplus_comments_render_admin_page()
-{
-  require GPLUS_COMMENTS_LIB . '/admin.php';
-}
+function gplus_comments_render_admin_page() { require GPLUS_COMMENTS_LIB . '/admin.php'; }
 
 /*
 <a class="twitter-timeline"  href="https://twitter.com/imbrandon"  data-widget-id="330505805105336320">Tweets by @imbrandon</a>
