@@ -43,6 +43,7 @@ jQuery(document).ready(function($) {
   <ul class="controls inline clearfix">
     <?php
       $tab_order = explode(',',$options['tab_order']);
+      $iconset = 'monotone';
       $active = ' class="active"';
       foreach ($tab_order as $tab) {
         echo "<li${active}><a href='#${tab}-tab'>";
