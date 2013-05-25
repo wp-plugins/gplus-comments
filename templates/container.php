@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
         echo "<li${active}><a href='#${tab}-tab'>";
         if(!$options['hide_icons'])
         {
-          echo "<img src='".GPLUS_COMMENTS_URL."/images/icons/default/${tab}.png'>";
+          echo "<img src='".GPLUS_COMMENTS_URL."/images/icons/${iconset}/${tab}.png'>";
         }
         echo $options[${tab}.'_label']."</a></li>\n";
         $active = '';
@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
     require_once GPLUS_COMMENTS_TEMPLATES . '/partials/wordpress.php';
   }
 
-  if(in_array('livefyre', $tab_order))
+  if(in_array('livefyre', $tab_order) && !empty($options['livefyre_siteid']))
   {
     require_once GPLUS_COMMENTS_TEMPLATES . '/partials/livefyre.php';
   }
