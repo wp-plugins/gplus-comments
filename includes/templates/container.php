@@ -47,12 +47,12 @@ jQuery(document).ready(function($) {
       $active = ' class="active">';
       foreach ($tab_order as $tab)
       {
-        echo "<li {$active}<a href='#{$tab}-tab'>";
+        echo "<li ".$active."<a href='#".$tab."-tab'>";
         if(!$options['hide_icons'])
         {
-          echo "<img src='".GPLUS_COMMENTS_URL."/assets/images/icons/{$iconset}/{$tab}.png'>";
+          echo "<img src='".GPLUS_COMMENTS_URL."/assets/images/icons/".$iconset."/".$tab.".png'>";
         }
-        echo $options[{$tab}.'_label']."</a></li>\n";
+        echo $options[${tab}.'_label']."</a></li>\n";
         $active = '';
       }
     ?>
