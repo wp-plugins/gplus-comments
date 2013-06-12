@@ -1,6 +1,6 @@
 /* Google+ Comments for WordPress ( http://wordpress.org/extend/plugins/gplus-comments ) by Brandon Holtsclaw */
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400);
+@import url(https://fonts.googleapis.com/css?family=Roboto Light:100,300,400);
 
 #comment-tabs .ui-helper-hidden
 {
@@ -132,12 +132,12 @@
     background: none;
 }
 
-#gplus-tab , #fb-tab , #tb-tab, #wp-tab, #disqus-tab
+#gplus-tab , #comment-content-blocks
 {
   padding: 0 !important ;
   margin: 0 !important ;
   padding-top: 8px !important;
-  background: #fff !important;
+  background: transparent !important;
 }
 
 #gplus-tab iframe, #fb-tab iframe
@@ -154,7 +154,7 @@
   border: 0 !important ;
   padding: 0 !important ;
   margin: 0 !important;
-  font-family: "Roboto" !important;
+  font-family: "Roboto Light" !important;
   font-weight: 300 !important;
   font-style: normal !important;
 }
@@ -189,14 +189,14 @@
 
 #comment-tabs h4
 {
-  font-family: "Roboto" !important;
+  font-family: "Roboto Light" !important;
   font-weight: 200 !important;
   font-style: normal !important;
 }
 
 #comment-tabs ul.controls
 {
-  font-family: "Roboto" !important;
+  font-family: "Roboto Light" !important;
   font-weight: 200 !important;
   font-style: normal !important;
 }

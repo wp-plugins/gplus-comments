@@ -1,23 +1,16 @@
 <?php
 /*
-Plugin Name: Google+ Comments
+Plugin Name: Comments Evolved
 Plugin URI: http://www.cloudhero.net/gplus-comments
-Description: Google+ Comments for WordPress plugin adds Google Plus comments along side your native WordPress comment system in a responsive tab interface.
+Description: The Comments Evolved for WordPress plugin adds the ability to enable native WordPress, Google+, Facebook, Disqus, Livefyre, Twitter comment systems  easily through the Admin webinterface.
 Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
 Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.13
+Version: 1.4.16
 */
 
-/**
- *       DEVELOPERS AND THEMERS : DONT EDIT THIS FILE DIRECTLY
- *       THERE ARE INSTRUCTIONS ON THE PLUGINS WEBPAGE TO CUSTOMIZE IT
- *       SO THAT IT WONT BE LOST ON PLUGIN UPATES.
- */
-
-// No direct access
 defined('ABSPATH') or exit;
 
 if (version_compare(phpversion(), '5.3', '<'))
@@ -47,12 +40,20 @@ define('GPLUS_COMMENTS_VERSION', gplus_comments_get_version());
 defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
 defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', __DIR__);
 defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
-defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/lib");
-defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/templates");
+defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/includes/lib");
+defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/includes/templates");
 defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
 
 require GPLUS_COMMENTS_LIB . '/hooks.php';
-function gplus_comments_render_admin_page() { require GPLUS_COMMENTS_LIB . '/admin.php'; }
+
+if ( is_admin() && ( !defined( 'DOING_AJAX' ) || !DOING_AJAX ) )
+{
+  function gplus_comments_admin() { require GPLUS_COMMENTS_LIB . '/admin.php'; }
+}
+else
+{
+  //require 'class-frontend.php';
+}
 
 /*
 <a class="twitter-timeline"  href="https://twitter.com/imbrandon"  data-widget-id="330505805105336320">Tweets by @imbrandon</a>

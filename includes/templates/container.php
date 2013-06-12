@@ -44,14 +44,15 @@ jQuery(document).ready(function($) {
     <?php
       $tab_order = explode(',',$options['tab_order']);
       $iconset = 'monotone';
-      $active = ' class="active"';
-      foreach ($tab_order as $tab) {
-        echo "<li${active}><a href='#${tab}-tab'>";
+      $active = ' class="active">';
+      foreach ($tab_order as $tab)
+      {
+        echo "<li {$active}<a href='#{$tab}-tab'>";
         if(!$options['hide_icons'])
         {
-          echo "<img src='".GPLUS_COMMENTS_URL."/images/icons/${iconset}/${tab}.png'>";
+          echo "<img src='".GPLUS_COMMENTS_URL."/assets/images/icons/{$iconset}/{$tab}.png'>";
         }
-        echo $options[${tab}.'_label']."</a></li>\n";
+        echo $options[{$tab}.'_label']."</a></li>\n";
         $active = '';
       }
     ?>
@@ -88,6 +89,10 @@ jQuery(document).ready(function($) {
   {
     require_once GPLUS_COMMENTS_TEMPLATES . '/partials/trackback.php';
   }
-  ?>
 
+  if(in_array('tweetback', $tab_order))
+  {
+    require_once GPLUS_COMMENTS_TEMPLATES . '/partials/tweetback.php';
+  }
+?>
 </div> <!--//comment tabs -->

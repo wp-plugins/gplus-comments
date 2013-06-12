@@ -5,7 +5,7 @@ defined('ABSPATH') or exit;
 
 function gplus_comments_init()
 {
-  wp_register_style('gplus_comments_tabs_css', GPLUS_COMMENTS_URL . '/styles/tabs.css', null, GPLUS_COMMENTS_VERSION, "all");
+  wp_register_style('gplus_comments_tabs_css', GPLUS_COMMENTS_URL . '/assets/styles/plugin.css', null, GPLUS_COMMENTS_VERSION, "all");
   wp_enqueue_script('jquery');
   wp_enqueue_script('jquery-ui-core');
   wp_enqueue_script('jquery-ui-tabs');
@@ -38,17 +38,18 @@ function gplus_comments_template($file)
      */
     if (!(is_singular() && (have_comments() || 'open' == $post->comment_status))) { return; }
 
-    /**
-     * This will allow theme authors to override the comments template files easy.
-     */
+    /*
     if (file_exists(TEMPLATEPATH . '/container.php'))
     {
       return TEMPLATEPATH . '/container.php';
     }
     else
     {
+    */
       return GPLUS_COMMENTS_TEMPLATES . '/container.php';
+    /*
     }
+    */
 }
 add_filter('comments_template', 'gplus_comments_template', 4269);
 
@@ -81,6 +82,15 @@ add_action('wp_head', 'gplus_comments_enqueue_styles', 4269);
 function gplus_comments_enqueue_scripts()
 {
   print "\n<script>jQuery('#comment-tabs').tabs();</script>\n";
+/*
+<script type="text/javascript">
+  (function() {
+   var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+   po.src = 'https://apis.google.com/js/client:plusone.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+*/
 }
 add_action('wp_footer', 'gplus_comments_enqueue_scripts', 4269);
 
@@ -109,7 +119,7 @@ function gplus_comments_admin_menu()
          'G+ Comments',
          'manage_options',
          'gplus-comments',
-         'gplus_comments_render_admin_page'
+         'gplus_comments_admin'
      );
 }
 add_action('admin_menu', 'gplus_comments_admin_menu', 10);
