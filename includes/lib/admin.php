@@ -45,6 +45,15 @@ if(empty($options['tab_order']))
         <td colspan="2"><hr></td>
     </tr>
     <tr>
+      <td>Icon Theme:</td>
+      <td>
+        <select name="gplus-comments[icon_theme]">
+            <option selected="selected" value="default">Default</option>
+            <option value="monotone">Monotone</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
         <td>Hide Icons:</td>
         <td><input type="checkbox" name="gplus-comments[hide_icons]" value="1" <?php checked( '1', $options['hide_icons']);?>></td>
     </tr>
