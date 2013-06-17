@@ -5,8 +5,7 @@ defined('ABSPATH') or exit;
 ?>
 <div class="wrap">
   <div style="width: 50%;float: left;">
-<h2>Google+ Comments</h2>
-<h3>( v<?php echo GPLUS_COMMENTS_VERSION; ?> )</h3>
+<h2>Google+ Comments <small>( v<?php echo GPLUS_COMMENTS_VERSION; ?> )</small></h2>
 <form method="POST"  action="options.php">
 <?php settings_fields( 'gplus-comments-options' ); ?>
 <?php $options = get_option( 'gplus-comments' ); ?>
