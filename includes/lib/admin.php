@@ -25,7 +25,7 @@ if(empty($options['tab_order']))
         <td>
           <strong>Notes:</strong> Comma Separated List, First listed is the default, <br>
           &nbsp;&nbsp;&nbsp;&nbsp;If left empty it will use default value below, tabs not listed will be hidden.<br>
-          <strong>Possible Values:</strong> gplus,facebook,disqus,wordpress,trackback<br>
+          <strong>Possible Values:</strong> gplus,facebook,livefyre,disqus,wordpress,trackback<br>
           <strong>Default Value:</strong> <?php echo GPLUS_COMMENTS_DEFAULT_TAB_ORDER; ?><br>
         </td>
     </tr>
@@ -100,9 +100,9 @@ if(empty($options['tab_order']))
     <?php submit_button(); ?>
 </form>
   </div>
-  <div style="float: right;">
-    Google+ Comments for WordPress is 100% free without Ad's. If you enjoy using this plugin consider a donation ... thank you!
-    <br>
-    <a class="wepay-widget-button wepay-green" id="wepay_widget_anchor_51bee9d197340" href="https://www.wepay.com/donations/617490497">Donate</a><script type="text/javascript">var WePay = WePay || {};WePay.load_widgets = WePay.load_widgets || function() { };WePay.widgets = WePay.widgets || [];WePay.widgets.push( {object_id: 617490497,widget_type: "donation_campaign",anchor_id: "wepay_widget_anchor_51bee9d197340",widget_options: {donor_chooses: true,allow_cover_fee: true,enable_recurring: true,button_text: "Donate"}});if (!WePay.script) {WePay.script = document.createElement('script');WePay.script.type = 'text/javascript';WePay.script.async = true;WePay.script.src = 'https://static.wepay.com/min/js/widgets.v2.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(WePay.script, s);} else if (WePay.load_widgets) {WePay.load_widgets();}</script>
+  <div style="width: 50%; float: right;">
+    <h2>Google+ Comments for WordPress is 100% free without Ad's.</h2>
+    <p>If you enjoy using this plugin consider a donation via <a href="https://www.wepay.com/donations/brandonholtsclaw">WePay</a> using the button below for any amount you see fit... thank you!</p>
+    <a class="wepay-widget-button wepay-green" id="wepay_widget_anchor_51beee51397d5" href="https://www.wepay.com/donations/338811">Donate</a><script type="text/javascript">var WePay = WePay || {};WePay.load_widgets = WePay.load_widgets || function() { };WePay.widgets = WePay.widgets || [];WePay.widgets.push( {object_id: 338811,widget_type: "donation_campaign",anchor_id: "wepay_widget_anchor_51beee51397d5",widget_options: {donor_chooses: true,allow_cover_fee: true,enable_recurring: true,button_text: "Donate"}});if (!WePay.script) {WePay.script = document.createElement('script');WePay.script.type = 'text/javascript';WePay.script.async = true;WePay.script.src = 'https://static.wepay.com/min/js/widgets.v2.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(WePay.script, s);} else if (WePay.load_widgets) {WePay.load_widgets();}</script>
   </div>
 </div>
