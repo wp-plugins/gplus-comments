@@ -1,6 +1,6 @@
 /* Google+ Comments for WordPress ( http://wordpress.org/extend/plugins/gplus-comments ) by Brandon Holtsclaw */
 
-@import url(https://fonts.googleapis.com/css?family=Roboto Light:100,300,400);
+@import url('https://fonts.googleapis.com/css?family=Roboto Light:100,300,400');
 
 #comment-tabs .ui-helper-hidden
 {
