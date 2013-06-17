@@ -1,6 +1,6 @@
 /* Google+ Comments for WordPress ( http://wordpress.org/extend/plugins/gplus-comments ) by Brandon Holtsclaw */
 
-@import url(https://fonts.googleapis.com/css?family=Roboto Light:100,300,400);
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 
 #comment-tabs .ui-helper-hidden
 {
@@ -154,8 +154,8 @@
   border: 0 !important ;
   padding: 0 !important ;
   margin: 0 !important;
-  font-family: "Roboto Light" !important;
-  font-weight: 300 !important;
+  font-family: "Roboto" !important;
+  font-weight: 400 !important;
   font-style: normal !important;
 }
 
@@ -182,22 +182,22 @@
 
 #comment-tabs .ui-tabs-nav .ui-state-active
 {
-  background: transparent url('https://i0.wp.com/www.cloudhero.net/plugins/gplus-comments/images/ui_tab_arrow_h.png') no-repeat bottom center;
+  background: transparent url('https://i0.wp.com/www.cloudhero.net/plugins/gplus-comments/assets/images/ui_tab_arrow_h.png') no-repeat bottom center;
   border: none !important;
   outline: none !important;
 }
 
 #comment-tabs h4
 {
-  font-family: "Roboto Light" !important;
-  font-weight: 200 !important;
+  font-family: "Roboto" !important;
+  font-weight: 400 !important;
   font-style: normal !important;
 }
 
 #comment-tabs ul.controls
 {
-  font-family: "Roboto Light" !important;
-  font-weight: 200 !important;
+  font-family: "Roboto" !important;
+  font-weight: 400 !important;
   font-style: normal !important;
 }
 

@@ -16,14 +16,14 @@ defined('ABSPATH') or exit;
 
 <div id="livefyre-tab" class="clearfix">
 <div id="livefyre-comments"></div>
-<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+<script type="text/javascript" src="//zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
 <script type="text/javascript">
 (function () {
     var articleId = fyre.conv.load.makeArticleId(null);
     fyre.conv.load({}, [{
         el: 'livefyre-comments',
         network: "livefyre.com",
-        siteId: "334164",
+        siteId: "<?php echo $options["livefyre_siteid"]; ?>",
         articleId: articleId,
         signed: false,
         collectionMeta: {

@@ -43,14 +43,17 @@ jQuery(document).ready(function($) {
   <ul class="controls inline clearfix">
     <?php
       $tab_order = explode(',',$options['tab_order']);
-      $iconset = 'default';
+      if(empty($options['icon_theme']))
+      {
+        $options['icon_theme'] = 'default';
+      }
       $active = ' class="active"';
       foreach ($tab_order as $tab)
       {
         echo "<li ".$active."><a href='#".$tab."-tab'>";
         if(!$options['hide_icons'])
         {
-          echo "<img src='".GPLUS_COMMENTS_URL."/assets/images/icons/".$iconset."/".$tab.".png'>";
+          echo "<img src='".GPLUS_COMMENTS_URL."/assets/images/icons/".$options['icon_theme']."/".$tab.".png'>";
         }
         echo $options[${tab}.'_label']."</a></li>\n";
         $active = '';

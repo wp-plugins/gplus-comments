@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Comments Evolved
+Plugin Name: Google+ Comments for WordPress
 Plugin URI: http://www.cloudhero.net/gplus-comments
 Description: The Comments Evolved for WordPress plugin adds the ability to enable native WordPress, Google+, Facebook, Disqus, Livefyre, Twitter comment systems  easily through the Admin webinterface.
 Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
@@ -8,7 +8,7 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.16
+Version: 1.4.17
 */
 
 defined('ABSPATH') or exit;
@@ -54,12 +54,4 @@ else
 {
   //require 'class-frontend.php';
 }
-
-/*
-<a class="twitter-timeline"  href="https://twitter.com/imbrandon"  data-widget-id="330505805105336320">Tweets by @imbrandon</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':
-'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
-fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-*/
-
 
