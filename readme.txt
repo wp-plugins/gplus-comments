@@ -103,6 +103,9 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.4.17 =
+* tab font adjustment
+
 = 1.4.16 =
 * refactor of most display code so its easier to add new commenting systems
 * tweaked tab fonts
