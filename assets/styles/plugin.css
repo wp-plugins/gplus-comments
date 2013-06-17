@@ -154,8 +154,8 @@
   border: 0 !important ;
   padding: 0 !important ;
   margin: 0 !important;
-  font-family: "Roboto Light" !important;
-  font-weight: 300 !important;
+  font-family: "Roboto" !important;
+  font-weight: 400 !important;
   font-style: normal !important;
 }
 
@@ -190,14 +190,14 @@
 #comment-tabs h4
 {
   font-family: "Roboto" !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   font-style: normal !important;
 }
 
 #comment-tabs ul.controls
 {
   font-family: "Roboto" !important;
-  font-weight: 200 !important;
+  font-weight: 400 !important;
   font-style: normal !important;
 }
 
