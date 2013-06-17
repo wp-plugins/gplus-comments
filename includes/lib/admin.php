@@ -42,6 +42,16 @@ if(empty($options['tab_order']))
         </td>
     </tr>
     <tr>
+        <td>Livefyre SiteID:</td>
+        <td><input type="text" name="gplus-comments[livefyre_siteid]" value="<?php echo $options['livefyre_siteid'];?>"></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
+            <strong>Notes:</strong> Required if showing the Livefyre Tab
+        </td>
+    </tr>
+    <tr>
         <td colspan="2"><hr></td>
     </tr>
     <tr>
@@ -72,6 +82,10 @@ if(empty($options['tab_order']))
     <tr>
         <td>Disqus Label:</td>
         <td><input type="text" name="gplus-comments[disqus_label]" value="<?php echo $options['disqus_label'];?>"></td>
+    </tr>
+    <tr>
+        <td>Livefyre Label:</td>
+        <td><input type="text" name="gplus-comments[livefyre_label]" value="<?php echo $options['livefyre_label'];?>"></td>
     </tr>
     <tr>
         <td>WordPress Label:</td>
