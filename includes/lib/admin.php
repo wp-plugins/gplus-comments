@@ -4,7 +4,7 @@ defined('ABSPATH') or exit;
 
 ?>
 <div class="wrap">
-  <div style="width: 50%;">
+  <div style="width: 50%;float: left;">
 <h2>Google+ Comments for WordPress ( v<?php echo GPLUS_COMMENTS_VERSION; ?> )</h2>
 <form method="POST"  action="options.php">
 <?php settings_fields( 'gplus-comments-options' ); ?>
@@ -99,10 +99,10 @@ if(empty($options['tab_order']))
 </table>
     <?php submit_button(); ?>
 </form>
-</div>
-<div>
-Google+ Comments for WordPress is 100% free without Ad's. If you enjoy using this plugin consider a donation ... thank you!
-<br>
-<a class="wepay-widget-button wepay-green" id="wepay_widget_anchor_51bee9d197340" href="https://www.wepay.com/donations/617490497">Donate</a><script type="text/javascript">var WePay = WePay || {};WePay.load_widgets = WePay.load_widgets || function() { };WePay.widgets = WePay.widgets || [];WePay.widgets.push( {object_id: 617490497,widget_type: "donation_campaign",anchor_id: "wepay_widget_anchor_51bee9d197340",widget_options: {donor_chooses: true,allow_cover_fee: true,enable_recurring: true,button_text: "Donate"}});if (!WePay.script) {WePay.script = document.createElement('script');WePay.script.type = 'text/javascript';WePay.script.async = true;WePay.script.src = 'https://static.wepay.com/min/js/widgets.v2.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(WePay.script, s);} else if (WePay.load_widgets) {WePay.load_widgets();}</script>
-</div>
+  </div>
+  <div style="float: right;">
+    Google+ Comments for WordPress is 100% free without Ad's. If you enjoy using this plugin consider a donation ... thank you!
+    <br>
+    <a class="wepay-widget-button wepay-green" id="wepay_widget_anchor_51bee9d197340" href="https://www.wepay.com/donations/617490497">Donate</a><script type="text/javascript">var WePay = WePay || {};WePay.load_widgets = WePay.load_widgets || function() { };WePay.widgets = WePay.widgets || [];WePay.widgets.push( {object_id: 617490497,widget_type: "donation_campaign",anchor_id: "wepay_widget_anchor_51bee9d197340",widget_options: {donor_chooses: true,allow_cover_fee: true,enable_recurring: true,button_text: "Donate"}});if (!WePay.script) {WePay.script = document.createElement('script');WePay.script.type = 'text/javascript';WePay.script.async = true;WePay.script.src = 'https://static.wepay.com/min/js/widgets.v2.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(WePay.script, s);} else if (WePay.load_widgets) {WePay.load_widgets();}</script>
+  </div>
 </div>
