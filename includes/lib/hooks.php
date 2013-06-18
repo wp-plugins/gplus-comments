@@ -38,16 +38,7 @@ function gplus_comments_template($file)
      */
     if (!(is_singular() && (have_comments() || 'open' == $post->comment_status))) { return; }
 
-    /*
-    if (file_exists(TEMPLATEPATH . '/container.php'))
-    {
-      return TEMPLATEPATH . '/container.php';
-    }
-    else
-    {
-    */
       return GPLUS_COMMENTS_TEMPLATES . '/container.php';
-    /*
     }
     */
 }
@@ -82,15 +73,6 @@ add_action('wp_head', 'gplus_comments_enqueue_styles', 4269);
 function gplus_comments_enqueue_scripts()
 {
   print "\n<script>jQuery('#comment-tabs').tabs();</script>\n";
-/*
-<script type="text/javascript">
-  (function() {
-   var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-   po.src = 'https://apis.google.com/js/client:plusone.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-*/
 }
 add_action('wp_footer', 'gplus_comments_enqueue_scripts', 4269);
 
@@ -133,6 +115,17 @@ function gplus_comments_admin_head()
 }
 add_action('admin_head', 'gplus_comments_admin_head');
 
+
+// [bartag foo="foo-value"]
+function bartag_func( $atts ) {
+  extract( shortcode_atts( array(
+    'foo' => 'something',
+    'bar' => 'something else',
+  ), $atts ) );
+
+  return "foo = {$foo}";
+}
+add_shortcode( 'bartag', 'bartag_func' );
 
 
 

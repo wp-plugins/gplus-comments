@@ -48,8 +48,9 @@ jQuery(document).ready(function($) {
         $options['icon_theme'] = 'default';
       }
       $active = ' class="active"';
-      foreach ($tab_order as $tab)
+      foreach ($tab_order as &$tab)
       {
+        $tab = trim($tab);
         echo "<li ".$active."><a href='#".$tab."-tab'>";
         if(!$options['hide_icons'])
         {
