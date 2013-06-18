@@ -115,15 +115,14 @@ add_action('admin_head', 'gplus_comments_admin_head');
 
 
 // [bartag foo="foo-value"]
-function bartag_func( $atts ) {
+function gplus_comments_shortcode( $atts ) {
   extract( shortcode_atts( array(
-    'foo' => 'something',
-    'bar' => 'something else',
+    'width' => '600',
   ), $atts ) );
 
-  return "foo = {$foo}";
+  return GPLUS_COMMENTS_TEMPLATES . '/container.php';
 }
-add_shortcode( 'bartag', 'bartag_func' );
+add_shortcode( 'commentsplus', 'gplus_comments_shortcode' );
 
 
 
