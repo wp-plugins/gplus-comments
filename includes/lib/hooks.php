@@ -40,7 +40,7 @@ function gplus_comments_template($file)
 
       return GPLUS_COMMENTS_TEMPLATES . '/container.php';
     }
-    */
+
 }
 add_filter('comments_template', 'gplus_comments_template', 4269);
 
