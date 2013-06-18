@@ -120,7 +120,11 @@ function gplus_comments_shortcode( $atts ) {
     'width' => '600',
   ), $atts ) );
 
-  return GPLUS_COMMENTS_TEMPLATES . '/container.php';
+  ob_start();
+  include(GPLUS_COMMENTS_TEMPLATES . '/container.php');
+  $container_content = ob_get_contents();
+  ob_end_clean ();
+  return $container_content;
 }
 add_shortcode( 'commentsplus', 'gplus_comments_shortcode' );
 
