@@ -38,9 +38,7 @@ function gplus_comments_template($file)
      */
     if (!(is_singular() && (have_comments() || 'open' == $post->comment_status))) { return; }
 
-      return GPLUS_COMMENTS_TEMPLATES . '/container.php';
-    }
-
+    return GPLUS_COMMENTS_TEMPLATES . '/container.php';
 }
 add_filter('comments_template', 'gplus_comments_template', 4269);
 
