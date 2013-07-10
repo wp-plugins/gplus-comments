@@ -8,10 +8,19 @@ Author URI: http://www.brandonholtsclaw.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.4.17
+Version: 1.4.18
 */
 
 defined('ABSPATH') or exit;
+
+define('GPLUS_COMMENTS_VERSION', gplus_comments_get_version());
+defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
+defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', __DIR__);
+defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
+defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/includes/lib");
+defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/includes/templates");
+defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
+defined('GPLUS_COMMENTS_PLUGIN_FILE') or define('GPLUS_COMMENTS_PLUGIN_FILE', basename(__FILE__));
 
 if (version_compare(phpversion(), '5.3', '<'))
 {
@@ -27,7 +36,7 @@ if (version_compare(phpversion(), '5.3', '<'))
 
 function gplus_comments_get_version() {
   $version = 0;
-  $plugin_file = file_get_contents(__FILE__);
+  $plugin_file = file_get_contents(GPLUS_COMMENTS_PLUGIN_FILE);
   preg_match('#^\s*Version\:\s*(.*)$#im', $plugin_file, $matches);
   if (!empty($matches[1]))
   {
@@ -35,14 +44,6 @@ function gplus_comments_get_version() {
   }
   return $version;
 }
-
-define('GPLUS_COMMENTS_VERSION', gplus_comments_get_version());
-defined('GPLUS_COMMENTS_DEBUG') or define('GPLUS_COMMENTS_DEBUG', false);
-defined('GPLUS_COMMENTS_DIR') or define('GPLUS_COMMENTS_DIR', __DIR__);
-defined('GPLUS_COMMENTS_URL') or define('GPLUS_COMMENTS_URL', rtrim(plugin_dir_url(__FILE__),"/"));
-defined('GPLUS_COMMENTS_LIB') or define('GPLUS_COMMENTS_LIB', GPLUS_COMMENTS_DIR . "/includes/lib");
-defined('GPLUS_COMMENTS_TEMPLATES') or define('GPLUS_COMMENTS_TEMPLATES', GPLUS_COMMENTS_DIR . "/includes/templates");
-defined('GPLUS_COMMENTS_DEFAULT_TAB_ORDER') or define('GPLUS_COMMENTS_DEFAULT_TAB_ORDER', 'gplus,facebook,wordpress');
 
 require GPLUS_COMMENTS_LIB . '/hooks.php';
 

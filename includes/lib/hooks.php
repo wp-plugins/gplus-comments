@@ -78,8 +78,7 @@ add_action('wp_footer', 'gplus_comments_enqueue_scripts', 4269);
  * Set the link for settings under the plugin name on the wp-admin plugins page
  */
 function gplus_comments_plugin_action_links($links, $file) {
-  $plugin_file = basename(__FILE__);
-  if (basename($file) == $plugin_file) {
+  if (basename($file) == GPLUS_COMMENTS_PLUGINS_FILE) {
     $settings_link = '<a href="edit-comments.php?page=gplus-comments">Settings</a>';
     array_unshift($links, $settings_link);
   }
@@ -113,12 +112,8 @@ function gplus_comments_admin_head()
 }
 add_action('admin_head', 'gplus_comments_admin_head');
 
-
-// [bartag foo="foo-value"]
 function gplus_comments_shortcode( $atts ) {
-  extract( shortcode_atts( array(
-    'width' => '600',
-  ), $atts ) );
+  extract( shortcode_atts( array( 'width' => '600',  ), $atts ) );
 
   ob_start();
   include(GPLUS_COMMENTS_TEMPLATES . '/container.php');
@@ -128,6 +123,23 @@ function gplus_comments_shortcode( $atts ) {
 }
 add_shortcode( 'commentsplus', 'gplus_comments_shortcode' );
 
+
+function insert_gplus_comments_author_in_head() {
+  $options = get_option( 'gplus-comments' );
+  echo '<!-- Comments Evolved plugin -->';
+  echo '<link href="https://plus.google.com/'.$options['gp_author'].'" rel="author" />';
+  echo '<!-- //Comments Evolved plugin -->';
+  /*
+  echo '<script type="text/javascript">';
+  echo '(function()';
+  echo '{var po = document.createElement("script");';
+  echo 'po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";';
+  echo 'var s = document.getElementsByTagName("script")[0];';
+  echo 's.parentNode.insertBefore(po, s);';
+  echo '})();</script>';
+  */
+}
+//add_action( 'wp_head', 'insert_gplus_comments_author_in_head', 5 );
 
 
 
