@@ -15,7 +15,7 @@ defined('ABSPATH') or exit;
 ?>
 
 <div id="tweetback-tab" class="content-tab clearfix">
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script src="//widgets.twimg.com/j/2/widget.js"></script>
 <script>
 new TWTR.Widget({
   version: 2,

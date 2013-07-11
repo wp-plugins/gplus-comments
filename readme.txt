@@ -114,7 +114,6 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 * added icon themes ( only default and monotone in this release )
 * added donation button to admin interface
 * lots of code cleanup in prep to add shortcodes
-* assets better orginised
 
 = 1.4.11 =
 * finally fixed the long standing bug where some themes could not click on content in the single post area

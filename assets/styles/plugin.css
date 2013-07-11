@@ -1,4 +1,4 @@
-/* Google+ Comments for WordPress ( http://wordpress.org/extend/plugins/gplus-comments ) by Brandon Holtsclaw */
+/* Comments Evolved for WordPress ( http://wordpress.org/extend/plugins/gplus-comments ) by Brandon Holtsclaw */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 
@@ -182,7 +182,7 @@
 
 #comment-tabs .ui-tabs-nav .ui-state-active
 {
-  background: transparent url('https://i0.wp.com/www.cloudhero.net/plugins/gplus-comments/assets/images/ui_tab_arrow_h.png') no-repeat bottom center;
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAAN0lEQVQ4y2NgGAWjgAA4cODAfxAmWzMMkGwIsmaSDcGmmWhD8GkmaAgxmnEaQopmDEPI0YxsCABrFhMg5A67XAAAAABJRU5ErkJggg==) no-repeat bottom center;
   border: none !important;
   outline: none !important;
 }
