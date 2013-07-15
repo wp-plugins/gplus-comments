@@ -1,4 +1,4 @@
-=== Google+ Comments for WordPress ===
+=== Comments Evolved for WordPress ===
 Contributors: bholtsclaw
 Donate link: http://www.wepay.com/donations/brandonholtsclaw
 Tags: comments, threaded, email, notification, spam, avatars, community, profile, widget, google, google plus, facebook, disqus, google+, +1, plus one, widget, tabs, comment tabs
@@ -6,12 +6,12 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.5
 Tested up to: 3.6
-Stable Tag: 1.4.17
+Stable Tag: 1.5.0
 
-Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
+Comments Evolved ( formerly Google Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
 
 == Description ==
-Google+ Comments for WordPress makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
+Comments Evolved ( formerly Google Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
 
 If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a soda from the mars. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
 
@@ -20,7 +20,6 @@ If a user is required to create an account with your site before they can commen
 Using this plugin or JavaScript to load comments **does _NOT_** have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
-* Big thanks to [Kev Quirk](https://plus.google.com/107532714495314593816/posts) over at [Refugeeks](http://www.refugeeks.com) for the Banner at the top of [our plugin page](http://wordpress.org/extend/plugins/gplus-comments/)
 * I've setup a page so if you want to [Donate](http://www.wepay.com/donations/brandonholtsclaw) to this plugins development, now you can.
 
 _This plug-in is not endorsed or associated with the Google, Twitter, Disqus, Facebook, WordPress.org, Automattic, or WordPress HelpCenter._
@@ -114,7 +113,6 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 * added icon themes ( only default and monotone in this release )
 * added donation button to admin interface
 * lots of code cleanup in prep to add shortcodes
-* assets better orginised
 
 = 1.4.11 =
 * finally fixed the long standing bug where some themes could not click on content in the single post area
