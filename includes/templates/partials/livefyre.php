@@ -1,37 +1,38 @@
 <?php
 /**
- * Google+ Comments Template
- *
- * @file           templates/partials/gplus.php
- * @package        WordPress
- * @subpackage     gplus-comments
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
- * @copyright      &copy; 2013 Brandon Holtsclaw
+ * @copyright      2013 Brandon Holtsclaw
  * @license        GPL
  */
-
-// No direct access
 defined('ABSPATH') or exit;
-?>
 
+if(!empty($options['livefyre_siteid'])) : ?>
+<!-- livefyre-tab -->
 <div id="livefyre-tab" class="clearfix">
-<div id="livefyre-comments"></div>
-<script type="text/javascript" src="//zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-<script type="text/javascript">
-(function () {
-    var articleId = fyre.conv.load.makeArticleId(null);
+  <div id="livefyre-comments"></div>
+  <script type="text/javascript" src="//zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+  <script type="text/javascript">
+  (function () {
+    var articleId = <?php echo $post->ID; ?>;
     fyre.conv.load({}, [{
-        el: 'livefyre-comments',
-        network: "livefyre.com",
-        siteId: "<?php echo $options["livefyre_siteid"]; ?>",
+      el: 'livefyre-comments',
+      network: "livefyre.com",
+      siteId: "<?php echo $options["livefyre_siteid"]; ?>",
+      articleId: articleId,
+      signed: false,
+      collectionMeta: {
         articleId: articleId,
-        signed: false,
-        collectionMeta: {
-            articleId: articleId,
-            url: fyre.conv.load.makeCollectionUrl(),
-        }
+        url: fyre.conv.load.makeCollectionUrl(),
+      }
     }], function() {});
-}());
-</script>
-</div><!-- //livefyre-tab -->
-
+  }());
+  </script>
+</div>
+<!-- //livefyre-tab -->
+<?php else : ?>
+<!-- livefyre-tab -->
+<div id="livefyre-tab" class="content-tab clearfix">
+  <h2 style="color: #ff0000;">You must fill in your Livefyre SiteID in the Comments Evolved <a href="/wp-admin/options-general.php?page=comments-evolved">plugin options</a>.</h2>
+</div>
+<!-- //livefyre-tab -->
+<?php endif;

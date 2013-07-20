@@ -1,22 +1,16 @@
 <?php
 /**
- * Google+ Comments Template
- *
- * @file           templates/partials/gplus.php
- * @package        WordPress
- * @subpackage     gplus-comments
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
- * @copyright      &copy; 2013 Brandon Holtsclaw
+ * @copyright      2013 Brandon Holtsclaw
  * @license        GPL
  */
-
-// No direct access
 defined('ABSPATH') or exit;
-?>
 
+?>
+<!-- tweetback-tab -->
 <div id="tweetback-tab" class="content-tab clearfix">
-<script src="//widgets.twimg.com/j/2/widget.js"></script>
-<script>
+  <script src="//widgets.twimg.com/j/2/widget.js"></script>
+  <script>
 new TWTR.Widget({
   version: 2,
   type: 'profile',
@@ -45,6 +39,7 @@ new TWTR.Widget({
     behavior: 'default'
   }
 }).render().setUser('imbrandon').start();
-</script>
-</div> <!--//tb-tab -->
+  </script>
+</div>
+<!-- //tweetback-tab -->
 

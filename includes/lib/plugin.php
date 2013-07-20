@@ -1,5 +1,9 @@
 <?php
-// No direct access
+/**
+ * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
+ * @copyright      2013 Brandon Holtsclaw
+ * @license        GPL
+ */
 defined('ABSPATH') or exit;
 
 add_action('init', function() {
@@ -31,21 +35,12 @@ function comments_evolved_plugin_action_links($links, $file) {
 }
 add_filter('plugin_action_links', 'comments_evolved_plugin_action_links', 10, 2);
 
-function comments_evolved_admin_menu()
-{
-     add_submenu_page
-     (
-         'options-general.php',
-         'Comments Evolved',
-         'Comments Evolved',
-         'manage_options',
-         'comments-evolved',
-         'comments_evolved_admin'
-     );
+function comments_evolved_admin_menu() {
+  add_submenu_page('options-general.php', 'Comments Evolved', 'Comments Evolved', 'manage_options', 'comments-evolved', 'comments_evolved_admin');
 }
 add_action('admin_menu', 'comments_evolved_admin_menu', 10);
 
-function comments_evolved_shortcode( $atts ) {
+function comments_evolved_shortcode($atts) {
   extract( shortcode_atts( array( 'width' => '600',  ), $atts ) );
 
   ob_start();
@@ -54,7 +49,7 @@ function comments_evolved_shortcode( $atts ) {
   ob_end_clean ();
   return $container_content;
 }
-add_shortcode( 'comments_evolved', 'comments_evolved_shortcode' );
+add_shortcode('comments_evolved', 'comments_evolved_shortcode');
 
 function display_comments_evolved() {
   echo do_shortcode('[comments_evolved]');
@@ -63,12 +58,11 @@ function display_comments_evolved() {
 function insert_comments_evolved_gpauthor_in_head() {
   $options = get_option( 'comments-evolved' );
   if(!empty($options['gp_author'])){
-    echo '<!-- Comments Evolved plugin -->' . PHP_EOL;
+    echo '<!-- comments-evolved plugin -->' . PHP_EOL;
     echo '<link href="https://plus.google.com/'.$options['gp_author'].'" rel="author" />' . PHP_EOL;
-    echo '<!-- //Comments Evolved plugin -->' . PHP_EOL;
+    echo '<!-- //comments-evolved plugin -->' . PHP_EOL;
   }
 }
 add_action('wp_head', 'insert_comments_evolved_gpauthor_in_head',5);
 
-//<div class="g-commentcount" data-href="[URL]"></div>
 

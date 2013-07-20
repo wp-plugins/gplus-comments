@@ -8,10 +8,10 @@ Requires at least: 3.5
 Tested up to: 3.6
 Stable Tag: 1.5.0
 
-Comments Evolved ( formerly Google Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress, & More
+Comments Evolved ( formerly Google+ Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for Comments & More
 
 == Description ==
-Comments Evolved ( formerly Google Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
+Comments Evolved ( formerly Google+ Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for G+ Comments, Facebook, Disqus, WordPress Comments, and Trackbacks
 
 If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a soda from the mars. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
 

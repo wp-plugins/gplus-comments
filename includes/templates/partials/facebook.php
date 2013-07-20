@@ -1,19 +1,13 @@
 <?php
 /**
- * Google+ Comments Template
- *
- * @file           templates/partials/gplus.php
- * @package        WordPress
- * @subpackage     gplus-comments
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
- * @copyright      &copy; 2013 Brandon Holtsclaw
+ * @copyright      2013 Brandon Holtsclaw
  * @license        GPL
  */
-
-// No direct access
 defined('ABSPATH') or exit;
-?>
 
+?>
+<!-- fb-tab -->
 <div id="facebook-tab" class="clearfix">
   <div id="fb-root"></div>
   <div id="fb-comments">Loading Facebook Comments ...</div>
@@ -25,6 +19,7 @@ defined('ABSPATH') or exit;
   </script>
   <script async type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1">FB.init();</script>
   <noscript>Please enable JavaScript to view the <a href="https://www.facebook.com/">comments powered by Facebook.</a></noscript>
-</div> <!--//fb-tab -->
+</div>
+<!-- //fb-tab -->
 
 

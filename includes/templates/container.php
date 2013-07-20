@@ -1,15 +1,9 @@
 <?php
 /**
- * Comments Evolved for WordPress -- Comments Container
- *
- * @file           templates/container.php
- * @package        gplus-comments
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
  * @copyright      2013 Brandon Holtsclaw
  * @license        GPL
  */
-
-// No direct access
 defined('ABSPATH') or exit;
 
 echo "\n\n";
@@ -35,7 +29,8 @@ jQuery(document).ready(function($) {
 });
 </script>
 
-<div id="comment-tabs">
+<!-- comment-tabs -->
+<div class="embed-container" id="comment-tabs">
   <?php
     if(!empty($options['comment_area_label'])) {
       echo "<h4>".$options['comment_area_label']."</h4>";
@@ -49,55 +44,31 @@ jQuery(document).ready(function($) {
         $options['icon_theme'] = 'default';
       }
       $active = ' class="active"';
-      foreach ($tab_order as &$tab)
-      {
+
+      $gplus_count = comments_evolved_get_gplus_count();
+      $facebook_count = comments_evolved_get_facebook_count();
+      $wordpress_count = get_comments_number();
+
+      foreach ($tab_order as &$tab) {
         $tab = trim($tab);
-        echo "<li ".$active."><a href='#".$tab."-tab'>";
-        if(!$options['hide_icons'])
-        {
-          echo "<img src='".COMMENTS_EVOLVED_URL."/assets/images/icons/".$options['icon_theme']."/".$tab.".png'>";
+        if(empty(${$tab . '_count'})) {
+          ${$tab . '_count'} = 0;
         }
-        echo $options[${tab}.'_label']."</a></li>\n";
+        echo "<li" . $active . " id='".$tab."-control'><a href='#".$tab."-tab'>";
+        if(!$options['hide_icons']) {
+          echo "<img id='" . $tab . "-icon' src='" . COMMENTS_EVOLVED_URL . "/assets/images/icons/" . $options['icon_theme'] . "/" . $tab . ".png'>";
+        }
+        echo "<span id='" . $tab . "-label'>" . $options[${tab} . '_label'] . "</span> ";
+        echo "<span id='" . $tab . "-count'>(${$tab . '_count'})</span>";
+        echo "</a></li>\n";
         $active = '';
       }
     ?>
   </ul>
-
-
   <?php
-  if(in_array('gplus', $tab_order))
-  {
-    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/gplus.php';
-  }
-
-  if(in_array('disqus', $tab_order) && !empty($options['disqus_shortname']))
-  {
-    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/disqus.php';
-  }
-
-  if(in_array('facebook', $tab_order))
-  {
-    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/facebook.php';
-  }
-
-  if(in_array('wordpress', $tab_order))
-  {
-    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/wordpress.php';
-  }
-
-  if(in_array('livefyre', $tab_order) && !empty($options['livefyre_siteid']))
-  {
-    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/livefyre.php';
-  }
-
-  if(in_array('trackback', $tab_order))
-  {
-    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/trackback.php';
-  }
-
-  if(in_array('tweetback', $tab_order))
-  {
-    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/tweetback.php';
+  foreach ($tab_order as &$tab) {
+    require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/' . $tab . '.php';
   }
 ?>
-</div> <!--//comment tabs -->
+</div>
+<!-- //comment-tabs -->

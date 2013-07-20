@@ -1,19 +1,14 @@
 <?php
 /**
- * Disqus Comments Template
- *
- * @file           templates/partials/disqus.php
- * @package        WordPress
- * @subpackage     gplus-comments
  * @author         Brandon Holtsclaw <me@brandonholtsclaw.com>
- * @copyright      &copy; 2013 Brandon Holtsclaw
+ * @copyright      2013 Brandon Holtsclaw
  * @license        GPL
  */
-
-// No direct access
 defined('ABSPATH') or exit;
-?>
 
+if(!empty($options['disqus_shortname'])) {
+?>
+<!-- disqus-tab -->
 <div id="disqus-tab" class="content-tab clearfix">
   <div id="disqus_thread">Loading Disqus Comments ...</div>
   <script type="text/javascript">
@@ -25,4 +20,15 @@ defined('ABSPATH') or exit;
     })(document);
   </script>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div> <!--//disqus-tab -->
+</div>
+<!-- //disqus-tab -->
+<?php
+} else {
+?>
+<!-- disqus-tab -->
+<div id="disqus-tab" class="content-tab clearfix">
+  <h2 style="color: #ff0000;">You must fill in your Disqus "shortname" in the Comments Evolved <a href="/wp-admin/options-general.php?page=comments-evolved">plugin options</a>.</h2>
+</div>
+<!-- //disqus-tab -->
+<?php
+}
