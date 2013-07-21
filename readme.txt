@@ -6,7 +6,7 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.5
 Tested up to: 3.6
-Stable Tag: 1.5.1
+Stable Tag: 1.5.2
 
 Comments Evolved ( formerly Google+ Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for Comments & More
 
@@ -102,6 +102,9 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.5.2 =
+*
+
 = 1.5.1 =
 * reworked css so that the embeded iFrames are now **responsive** and more mobile friendly.
 * fixed JS for loading Livefyre so that comments made with the official plugin and this plugin are loaded in the same way.
