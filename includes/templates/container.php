@@ -22,14 +22,12 @@ if(empty($options['tab_order'])) {
   $options['tab_order'] = COMMENTS_EVOLVED_DEFAULT_TAB_ORDER;
 }
 ?>
-
+<!-- comment-tabs -->
 <script type="text/javascript">
 jQuery(document).ready(function($) {
   window.comment_tab_width = $('#comment-tabs').innerWidth();
 });
 </script>
-
-<!-- comment-tabs -->
 <div class="embed-container" id="comment-tabs">
   <?php
     if(!empty($options['comment_area_label'])) {
@@ -45,9 +43,10 @@ jQuery(document).ready(function($) {
       }
       $active = ' class="active"';
 
+      $wordpress_count = comments_evolved_get_wordpress_count();
       $gplus_count = comments_evolved_get_gplus_count();
+      $trackback_count = comments_evolved_get_trackback_count();
       $facebook_count = comments_evolved_get_facebook_count();
-      $wordpress_count = get_comments_number();
 
       foreach ($tab_order as &$tab) {
         $tab = trim($tab);

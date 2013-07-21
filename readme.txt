@@ -102,6 +102,19 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.5.1 =
+* reworked css so that the embeded iFrames are now **responsive** and more mobile friendly.
+* fixed JS for loading Livefyre so that comments made with the official plugin and this plugin are loaded in the same way.
+* added option to show comment count on each tab label
+* added shortcode `[comments_evolved]` and template tag `display_comments_evolved()` to display comment section in anywhere.
+* added shortcodes and template tags to show individual and combined comment counts ( @see the [install page](http://wordpress.org/plugins/gplus-comments/installation/) for listing )
+
+
+= 1.5.0 =
+* WARNING: if you are upgrading from Google+ Comments for WordPress to Comments Evolved then the plugin will need to be manually reactivated and settings will be reset back to defaults.
+* rebranding from "Google+ Comments" to "Comments Evolved" ... completed
+* major code cleanups ( seperated plugin init, frontend, and backend code )
+
 = 1.4.17 =
 * tab font adjustment
 
