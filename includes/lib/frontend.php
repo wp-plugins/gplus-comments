@@ -17,27 +17,26 @@ add_filter('comments_template', 'comments_evolved_template', 4269);
 
 function comments_evolved_get_total_count() {
   $total_count = 0;
-  //$wpc_1 = get_comments_number();
   $wpc = comments_evolved_get_wordpress_count();
   $fbc = comments_evolved_get_facebook_count();
   $gpc = comments_evolved_get_gplus_count();
 
-  $total_count = $fbc + $gpc + $wpc;
+  $total_count = $total_count + $fbc + $gpc + $wpc;
   return $total_count;
 }
-//add_filter('get_comments_number', 'comments_evolved_get_total_count');
+add_filter('get_comments_number', 'comments_evolved_get_total_count');
 
 function comments_evolved_get_wordpress_count() {
-  global $comments_by_type;
-  return count($comments_by_type['comment']);
+  global $post, $comments, $wp_query, $comments_by_type;
+  return count($wp_query->comments_by_type['comment']);
 }
 
 function comments_evolved_get_trackback_count() {
-  global $comments_by_type;
-  return count($comments_by_type['pings']);
+  global $post, $comments, $wp_query, $comments_by_type;
+  return count($wp_query->comments_by_type['pings']);
 }
 
-function comments_evolved_get_facebook_count($url) {
+function comments_evolved_get_facebook_count($url = "") {
   if(empty($url)){ $url = get_permalink(); }
   $link = 'https://graph.facebook.com/?ids=' . urlencode($url);
   $link_body = wp_remote_retrieve_body(wp_remote_get($link));
@@ -45,7 +44,7 @@ function comments_evolved_get_facebook_count($url) {
   return $json->$url->comments;
 }
 
-function comments_evolved_get_gplus_count($url) {
+function comments_evolved_get_gplus_count($url = "") {
   include_once COMMENTS_EVOLVED_LIB . '/simple_html_dom.php';
   if(empty($url)){ $url = get_permalink(); }
   $link = 'https://apis.google.com/_/widget/render/commentcount?bsv&href=' . urlencode($url);

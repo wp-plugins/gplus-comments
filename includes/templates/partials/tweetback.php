@@ -7,10 +7,8 @@
 defined('ABSPATH') or exit;
 
 ?>
-<!-- tweetback-tab -->
-<div id="tweetback-tab" class="content-tab clearfix">
-  <script src="//widgets.twimg.com/j/2/widget.js"></script>
-  <script>
+<script src="//widgets.twimg.com/j/2/widget.js"></script>
+<script>
 new TWTR.Widget({
   version: 2,
   type: 'profile',
@@ -39,7 +37,5 @@ new TWTR.Widget({
     behavior: 'default'
   }
 }).render().setUser('imbrandon').start();
-  </script>
-</div>
-<!-- //tweetback-tab -->
+</script>
 
