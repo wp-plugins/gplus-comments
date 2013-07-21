@@ -167,7 +167,7 @@
   /* overflow: hidden; */
 }
 
-#gplus-tab, #facebook-tab iframe {
+.embed-container iframe {
   position: absolute;
   top: 0;
   left: 0;
