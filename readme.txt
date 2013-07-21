@@ -103,7 +103,7 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 
 == Change Log ==
 = 1.5.2 =
-*
+* css updates
 
 = 1.5.1 =
 * reworked css so that the embeded iFrames are now **responsive** and more mobile friendly.
