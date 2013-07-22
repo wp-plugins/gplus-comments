@@ -41,8 +41,7 @@ function comments_evolved_admin_menu() {
 add_action('admin_menu', 'comments_evolved_admin_menu', 10);
 
 function comments_evolved_shortcode($atts) {
-  extract( shortcode_atts( array( 'width' => '600',  ), $atts ) );
-
+  //extract( shortcode_atts( array( 'width' => '600',  ), $atts ) );
   ob_start();
   include(COMMENTS_EVOLVED_TEMPLATES . '/container.php');
   $container_content = ob_get_contents();

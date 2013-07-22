@@ -29,6 +29,7 @@ jQuery(document).ready(function($) {
 });
 </script>
 <div id="comment-tabs">
+<a name="comments"></a>
   <?php
     if(!empty($options['comment_area_label'])) {
       echo "<h4 id='comment-tabs-label'>".$options['comment_area_label']."</h4>";
@@ -47,6 +48,7 @@ jQuery(document).ready(function($) {
       $gplus_count = comments_evolved_get_gplus_count();
       $trackback_count = comments_evolved_get_trackback_count();
       $facebook_count = comments_evolved_get_facebook_count();
+      $disqus_count = comments_evolved_get_disqus_count();
 
       foreach ($tab_order as &$tab) {
         $tab = trim($tab);
