@@ -22,18 +22,17 @@ if(empty($options['tab_order'])) {
   $options['tab_order'] = COMMENTS_EVOLVED_DEFAULT_TAB_ORDER;
 }
 ?>
-
+<!-- comment-tabs -->
 <script type="text/javascript">
 jQuery(document).ready(function($) {
   window.comment_tab_width = $('#comment-tabs').innerWidth();
 });
 </script>
-
-<!-- comment-tabs -->
-<div class="embed-container" id="comment-tabs">
+<div id="comment-tabs">
+<a name="comments"></a>
   <?php
     if(!empty($options['comment_area_label'])) {
-      echo "<h4>".$options['comment_area_label']."</h4>";
+      echo "<h4 id='comment-tabs-label'>".$options['comment_area_label']."</h4>";
     }
   ?>
   <ul class="controls inline clearfix">
@@ -45,9 +44,11 @@ jQuery(document).ready(function($) {
       }
       $active = ' class="active"';
 
+      $wordpress_count = comments_evolved_get_wordpress_count();
       $gplus_count = comments_evolved_get_gplus_count();
+      $trackback_count = comments_evolved_get_trackback_count();
       $facebook_count = comments_evolved_get_facebook_count();
-      $wordpress_count = get_comments_number();
+      $disqus_count = comments_evolved_get_disqus_count();
 
       foreach ($tab_order as &$tab) {
         $tab = trim($tab);
@@ -58,16 +59,20 @@ jQuery(document).ready(function($) {
         if(!$options['hide_icons']) {
           echo "<img id='" . $tab . "-icon' src='" . COMMENTS_EVOLVED_URL . "/assets/images/icons/" . $options['icon_theme'] . "/" . $tab . ".png'>";
         }
-        echo "<span id='" . $tab . "-label'>" . $options[${tab} . '_label'] . "</span> ";
-        echo "<span id='" . $tab . "-count'>(${$tab . '_count'})</span>";
-        echo "</a></li>\n";
+        echo "<span id='" . $tab . "-label'>" . $options[${tab} . '_label'] . "</span>";
+        echo "<span id='" . $tab . "-count'> (${$tab . '_count'})</span>";
+        echo "</a></li>" . PHP_EOL;
         $active = '';
       }
     ?>
   </ul>
   <?php
   foreach ($tab_order as &$tab) {
+    echo "<!-- " . $tab . "-tab -->" . PHP_EOL;
+    echo "<div id='" . $tab . "-tab' class='embed-container content-tab clearfix'>" . PHP_EOL;
     require_once COMMENTS_EVOLVED_TEMPLATES . '/partials/' . $tab . '.php';
+    echo "</div>" . PHP_EOL;
+    echo "<!-- //" . $tab . "-tab -->" . PHP_EOL;
   }
 ?>
 </div>
