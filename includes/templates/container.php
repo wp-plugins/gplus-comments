@@ -43,13 +43,13 @@ jQuery(document).ready(function($) {
         $options['icon_theme'] = 'default';
       }
       $active = ' class="active"';
-
+      /*
       $wordpress_count = comments_evolved_get_wordpress_count();
       $gplus_count = comments_evolved_get_gplus_count();
       $trackback_count = comments_evolved_get_trackback_count();
       $facebook_count = comments_evolved_get_facebook_count();
       $disqus_count = comments_evolved_get_disqus_count();
-
+      */
       foreach ($tab_order as &$tab) {
         $tab = trim($tab);
         if(empty(${$tab . '_count'})) {
@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
           echo "<img id='" . $tab . "-icon' src='" . COMMENTS_EVOLVED_URL . "/assets/images/icons/" . $options['icon_theme'] . "/" . $tab . ".png'>";
         }
         echo "<span id='" . $tab . "-label'>" . $options[${tab} . '_label'] . "</span>";
-        echo "<span id='" . $tab . "-count'> (${$tab . '_count'})</span>";
+        //echo "<span id='" . $tab . "-count'> (${$tab . '_count'})</span>";
         echo "</a></li>" . PHP_EOL;
         $active = '';
       }
