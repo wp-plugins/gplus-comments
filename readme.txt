@@ -14,7 +14,7 @@ This Google+ comment system replaces your WordPress comment system with your G+ 
 
 This plugin lets you use the Google+ Comment System thats implented on blogger.com (unofficially) on your Wordpress.org blog. Google+ makes commenting easier and more interactive, while connecting websites and commenters.
 
-You can see a live demo at [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).
+
 
 G+ Comments system for WordPress seamlessly adds to the wordpress commenting system tabs with Google's.
 
@@ -25,7 +25,7 @@ G+ Comments system for WordPress seamlessly adds to the wordpress commenting sys
 
 == Screenshots ==
 
-1. G+ Comments Live on CloudHero.net
+1. G+ Comments Live
 
 == Installation ==
 
@@ -60,6 +60,4 @@ Yes, both systems can be active at the same time.
 * Initial public release
 
 == Support ==
-* Visit http:///www.cloudhero.net/gplus-comments limited help & documentation.
-* I also recommend the [WordPress HelpCenter](http://wphelpcenter.com/) for extended help. This plugin is not associated with the Google, Google+, or WordPress HelpCenter in any way.
-
+* I recommend the [WordPress HelpCenter](http://wphelpcenter.com/) for extended help. This plugin is not associated with the Google, Google+, or WordPress HelpCenter in any way.
