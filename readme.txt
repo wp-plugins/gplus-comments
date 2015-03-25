@@ -12,10 +12,10 @@ Google Plus Comments adds a Tabbed Comment view with G+ Comment threads to your 
 
 == Description ==
 Google Plus Comments  adds a tabbed Comment view with G+ Comment threads to your WordPress install while still ( optional ) keeping Native comments, plus can add in other comment systems as well.
-This plugin lets you use the Google+ Comment System thats implented on blogger.com (unofficially) on your Wordpress.org blog. 
+This plugin lets you use the Google+ Comment System thats implented on blogger.com (unofficially) on your Wordpress.org blog.
 Google+ makes commenting easier and more interactive, while connecting websites and commenters.
 
-You can see a live demo at [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).
+
 
 G+ Comments system for WordPress seamlessly adds to the wordpress commenting system tabs with Google's.
 
@@ -25,7 +25,7 @@ G+ Comments system for WordPress seamlessly adds to the wordpress commenting sys
 **This Plugin is not made nor endorced by Google Inc.**
 
 == Screenshots ==
-1. G+ Comments Live on CloudHero.net
+1. G+ Comments Live
 
 == Installation ==
 **NOTE: You should always [backup your database](http://codex.wordpress.org/Backing_Up_Your_Database) before installing the plugins.**
@@ -59,6 +59,4 @@ Yes, both systems can be active at the same time.
 * Initial public release
 
 == Support ==
-* Visit http:///www.cloudhero.net/gplus-comments limited help & documentation.
-* I also recommend the [WordPress HelpCenter](http://wphelpcenter.com/) for extended help. This plugin is not associated with the Google, Google+, or WordPress HelpCenter in any way.
-
+* I recommend the [WordPress HelpCenter](http://wphelpcenter.com/) for extended help. This plugin is not associated with the Google, Google+, or WordPress HelpCenter in any way.
