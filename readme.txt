@@ -15,7 +15,7 @@ Google+ Comments for WordPress makes the comment section tabbed seamlessly addin
 
 If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a soda from the mars. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
 
-**Live Demo @** [www.cloudhero.net](http://www.cloudhero.net/)
+
 
 Using this plugin or JavaScript to load comments **does _NOT_** have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.
 
@@ -72,11 +72,11 @@ _Here are things to try in order to see what the problem is._
   when running DD-WRT or similar as well and ou may not have noticed/known before something like this.
 
 6. There may be a style conflict of some sort, check the Developer console for your browser ( any of them anymore have
-  a debug console / js console , even IE7+ native and others via extensions too ) when the page is loading to check for 
+  a debug console / js console , even IE7+ native and others via extensions too ) when the page is loading to check for
   error messaged that may help narrow it down.
 
 7. Try deleting the plugin and reinstalling - it may have not completely updated correctly.
-  You'll have to reset your settings so you might want to write them down.  
+  You'll have to reset your settings so you might want to write them down.
 
 = Do you need any other plugins to use the other commenting systems like Disqus ? =
 No. All needed code for any of the available commenting systems is included with this plugin.
@@ -115,7 +115,7 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 * tighened up css margins for tabs
 
 = 1.4.1 =
-* minor css hotfixes for tab margin and spacing 
+* minor css hotfixes for tab margin and spacing
 
 = 1.4.0 =
 * You can now change the default order of the tabs
