@@ -6,7 +6,7 @@ License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.5
 Tested up to: 3.6
-Stable Tag: 1.5.6
+Stable Tag: 1.5.7
 
 Comments Evolved ( formerly Google+ Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for Comments & More
 
@@ -17,7 +17,7 @@ If a user is required to create an account with your site before they can commen
 
 **Source Code @ Github: ** [comments-evolved@github](https://github.com/bholtsclaw/comments-evolved)
 
-**Demo: ** [www.cloudhero.net](http://www.cloudhero.net/)
+
 
 Using this plugin or JavaScript to load comments **does _NOT_** have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.
 
