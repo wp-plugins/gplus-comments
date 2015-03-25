@@ -22,7 +22,7 @@ if (post_password_required()) {
 }
 
 echo "\n\n<!-- ****************************************************************************************************************************************-->\n";
-echo "<!-- Google+ Comments for Wordpress (http://www.cloudhero.net/gplus-comments) by Brandon Holtsclaw (http://www.brandonholtsclaw.com) -->\n";
+echo "<!-- Google+ Comments for Wordpress by Brandon Holtsclaw (http://www.brandonholtsclaw.com) -->\n";
 echo "<!-- ****************************************************************************************************************************************-->\n\n";
 if(GPLUS_COMMENTS_DEBUG){
   echo "\n<!--\n";
