@@ -15,7 +15,7 @@ Google+ Comments for WordPress makes the comment section tabbed seamlessly addin
 
 If a user is required to create an account with your site before they can comment, you might as well ask them to fetch you a beer from the moon. It’s probably not going to happen. However, if you can give them the option to comment with an account they’ve already set up, then you will be much more likely to get some interaction.
 
-**Live Demo @** [www.cloudhero.net](http://www.cloudhero.net/)
+
 
 Using this plugin or JavaScript to load comments **does _NOT_** have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.
 
@@ -60,7 +60,7 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 
 == Change Log ==
 = 1.4.1 =
-* minor css hotfixes for tab margin and spacing 
+* minor css hotfixes for tab margin and spacing
 = 1.4.0 =
 * You can now change the default order of the tabs
 * The first tab is now default so something other than G+ can be default
