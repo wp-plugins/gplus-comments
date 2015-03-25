@@ -1,7 +1,6 @@
 <?php
 /*
 Plugin Name: Google+ Comments
-Plugin URI: http://www.cloudhero.net/gplus-comments
 Description: The Google+ comments plugin replaces or runs along side your WordPress comment system with your comments hosted and powered by Google+.
 Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
 Version: 1.0.3
