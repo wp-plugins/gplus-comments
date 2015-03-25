@@ -1,7 +1,6 @@
 <?php
 /*
 Plugin Name: Google+ Comments
-Plugin URI: http://www.cloudhero.net/gplus-comments
 Description: Google+ Comments for WordPress plugin adds Google Plus comments along side your native WordPress comment system in a responsive tab interface.
 Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
 Author URI: http://www.brandonholtsclaw.com/
