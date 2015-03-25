@@ -1,7 +1,6 @@
 <?php
 /*
 Plugin Name: Google+ Comments for WordPress
-Plugin URI: http://www.cloudhero.net/gplus-comments
 Description: The Comments Evolved for WordPress plugin adds the ability to enable native WordPress, Google+, Facebook, Disqus, Livefyre, Twitter comment systems  easily through the Admin webinterface.
 Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
 Author URI: http://www.brandonholtsclaw.com/
