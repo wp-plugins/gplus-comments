@@ -16,7 +16,7 @@ This plug-in lets you use the Google+ comment system thats implemented on blogge
 
 **NOTE: Using this plugin or JavaScript to load comments does _NOT_ have a negative effect on your SEO, Google now indexes content ( and specifically comments ) loaded via JavaScript. See [this link](http://blog.optimum7.com/safon/google/google-now-indexing-fb-comments.html) and also [this one](http://webmasters.stackexchange.com/questions/27042/effect-on-seo-of-lazy-scrolling-on-html-comments) for more details.**
 
-**Live Demo @ [www.cloudhero.net/gplus-comments](http://www.cloudhero.net/gplus-comments).**
+
 
 * You should have [Google Authorship](http://plus.google.com/authorship) already setup and in use for your site.
 * I've setup a page so if you want to [donate to this plugin](http://www.wepay.com/donations/brandonholtsclaw) you can. Thanks!
@@ -82,6 +82,4 @@ I can be reached many different ways all listed on http://en.gravatar.com/imbran
 * Initial public release
 
 == Support ==
-* Visit http:///www.cloudhero.net/gplus-comments limited help & documentation.
-* I also recommend the [WordPress HelpCenter](http://wphelpcenter.com/) for extended help.
-
+* I recommend the [WordPress HelpCenter](http://wphelpcenter.com/) for extended help.
