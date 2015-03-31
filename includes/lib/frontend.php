@@ -5,8 +5,9 @@
  * @license        GPL
  */
 defined('ABSPATH') or exit;
-define( 'CD_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-require_once(CD_PLUGIN_PATH . '../../mixpanel-php-master/lib/Mixpanel.php');
+// define( 'CD_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+// var_dump(CD_PLUGIN_PATH);
+// require_once(CD_PLUGIN_PATH . 'mixpanel-php-master/lib/Mixpanel.php');
 
 function comments_evolved_template($file) {
   global $post, $comments;
