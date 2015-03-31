@@ -3,12 +3,10 @@
 Plugin Name: Comments Evolved for WordPress
 Plugin URI: http://wordpress.org/plugins/gplus-comments/
 Description: The Comments Evolved for WordPress plugin adds the ability to enable native WordPress, Google+, Facebook, Disqus, Livefyre comment systems easily.
-Author: Brandon Holtsclaw <me@brandonholtsclaw.com>
-Author URI: http://www.brandonholtsclaw.com/
+Author: BenSh
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Donate link: http://www.wepay.com/donations/brandonholtsclaw
-Version: 1.5.8
+Version: 1.5.9
 */
 
 defined('ABSPATH') or exit;

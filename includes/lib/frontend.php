@@ -6,7 +6,7 @@
  */
 defined('ABSPATH') or exit;
 define( 'CD_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-require_once(CD_PLUGIN_PATH . 'signalfx.php');
+require_once(CD_PLUGIN_PATH . '../../mixpanel-php-master/lib/Mixpanel.php');
 
 function comments_evolved_template($file) {
   global $post, $comments;
@@ -89,20 +89,14 @@ function comments_evolved_enqueue_scripts() {
 }
 add_action('wp_footer', 'comments_evolved_enqueue_scripts', 4269);
 
-function track_plugin_loaded_event() {
-  // get the SignalFx class instance, replace with your project token
-  $signalfx = SignalFx::getInstance("tSn033iSoOb1l7NubpR57w");
-  // track an event
-  $result = $signalfx->track('plugin_loaded', array("plugin_name" => "gplus_comments", "site_domain" => home_url(), "php_version" => phpversion()));
-  return $result;
-}
-add_action('wp_loaded', 'track_plugin_loaded_event');
-
 function track_comment_posted_event() {
-  // get the SignalFx class instance, replace with your project token
-  $signalfx = SignalFx::getInstance("tSn033iSoOb1l7NubpR57w");
-  // track an event
-  $result = $signalfx->track('comment_posted', array("plugin_name" => "gplus_comments", "site_domain" => home_url(), "php_version" => phpversion()));
+  $string = phpversion();
+  if (substr( $string, 0, 1 ) === '5') {
+    // get the Mixpanel class instance, replace with your project token
+    $mp = Mixpanel::getInstance("d6943462b143b3727b42a1f59c2e27e7");
+    // track an event
+    $result = $mp->track('Comment Posted', array("plugin_name" => "gplus_comments", "site_domain" => home_url(), "php_version" => phpversion()));
+  }
   return $result;
 }
 add_action('wp_insert_comment', 'track_comment_posted_event');

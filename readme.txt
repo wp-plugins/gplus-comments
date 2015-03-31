@@ -1,12 +1,11 @@
 === Comments Evolved for WordPress ===
-Contributors: bholtsclaw
-Donate link: http://www.wepay.com/donations/brandonholtsclaw
+Contributors: bensh
 Tags: comments, threaded, email, notification, spam, avatars, community, profile, widget, google, google plus, facebook, disqus, google+, +1, plus one, widget, tabs, comment tabs
 License: GPLv3+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.5
 Tested up to: 3.6
-Stable Tag: 1.5.8
+Stable Tag: 1.5.9
 
 Comments Evolved ( formerly Google+ Comments for WordPress ) makes the comment section tabbed seamlessly adding tabs for Comments & More
 
@@ -104,6 +103,9 @@ Yes, just disable WP comments like you normally would and then leave the Show Wo
 I can be reached many different ways all listed on http://en.gravatar.com/imbrandon , including Email, Phone, or Other Social Networks.
 
 == Change Log ==
+= 1.5.9 =
+* slow page load fixed 
+
 = 1.5.8 =
 * improved performance
 * bug fixes 
