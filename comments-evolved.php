@@ -6,7 +6,7 @@ Description: The Comments Evolved for WordPress plugin adds the ability to enabl
 Author: BenSh
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.5.9
+Version: 1.6
 */
 
 defined('ABSPATH') or exit;
